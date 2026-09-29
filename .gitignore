@@ -1,0 +1,19 @@
+# Local Python environments and generated caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Editor and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local graph extraction caches
+.graphify_cache/
+
+# Keep measured results, charts, and documentation under version control.

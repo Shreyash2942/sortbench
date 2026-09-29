@@ -1,0 +1,5 @@
+# Third-party tools for testing (Day 2) and analysis/charts (Day 6).
+# Sorting, dataset generation, and timing use Python's standard library.
+pytest
+pandas
+matplotlib
