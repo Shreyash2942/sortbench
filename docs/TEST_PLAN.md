@@ -1,8 +1,17 @@
 # Test plan
 
-Day 1 validates the structure, imports, entry point, and runtime spike. The
-test modules are placeholders; algorithm tests begin on Day 2. An empty test
-suite is not a passing correctness suite.
+Day 1 validated the structure, imports, entry point, and runtime spike.
+Day 2 implements `tests/test_algorithms.py`: **93 tests pass** with Python
+3.14.4. Dataset and benchmark test modules remain placeholders until Days 3–4.
+
+The suite checks each algorithm against Python's `sorted()` and verifies that
+the returned object is the supplied list. It covers 13 named edge cases, every
+list of length 0–5 over `{-1, 0, 1}` (364 inputs per algorithm), seven seeded
+random sizes up to 1,000, and repeated independent calls. Additional checks
+verify one linear comparison pass for already sorted Bubble/Insertion inputs
+and preservation of equal-value order for Bubble, Insertion, and Merge Sort.
+Selection Sort makes no stability guarantee. These are correctness checks;
+they do not establish measured performance rankings.
 
 | Stage | Checks | Acceptance |
 |---|---|---|

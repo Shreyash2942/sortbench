@@ -1,8 +1,9 @@
 # Architecture
 
 SortBench is a local Python program built from small modules. The following
-diagram describes the intended implementation; module files are placeholders
-at the end of Day 1.
+diagram describes the intended full system. As of Day 2, the four sorting
+functions, algorithm tests, and a demonstration entry point are implemented.
+Dataset generation, benchmarking, analysis, and plotting remain placeholders.
 
 ```text
 main.py
@@ -17,7 +18,7 @@ main.py
   -> docs/                               interpret results and trade-offs
 ```
 
-## Planned contracts
+## Component contracts
 
 - Each sorting function accepts `values: list[int]`, sorts that list in ascending
   order, and returns the same list. Bubble Sort uses an early-exit flag. Merge

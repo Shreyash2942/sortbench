@@ -6,7 +6,7 @@ This file tracks implementation status rather than treating planned work as done
 | Day | Work | Current status |
 |---|---|---|
 | 1 | Repository, structure, README, requirements, architecture, benchmark method, runtime spike | Complete |
-| 2 | Implement and test four sorting algorithms | Pending |
+| 2 | Implement and test four sorting algorithms | Complete |
 | 3 | Implement and test four dataset generators | Pending |
 | 4 | Implement timer, runner, validation, CSV export | Pending |
 | 5 | Execute and validate the complete performance matrix | Pending |
@@ -32,7 +32,8 @@ all scaffold Python files compile, 13 project/dependency modules import, and
 `pip check` reports no broken requirements. All current documentation links
 resolve, the original assignment copy is byte-for-byte preserved, and the spike
 CSV contains all nine intended measurements. The virtual environment and Python
-caches are excluded by `.gitignore`. Correctness tests remain scheduled for Day 2.
+caches are excluded by `.gitignore`. Correctness tests were scheduled for Day 2
+at that checkpoint and are now complete as described below.
 
 The [runtime spike](RUNTIME_SPIKE.md) measured median times of approximately
 0.007749, 0.030656, and 0.113984 seconds at 1,000, 2,000, and 4,000 elements.
@@ -43,12 +44,29 @@ Day 1 work is organized into focused commits for project scaffolding,
 requirements and architecture, benchmark methodology and testing, and the
 runtime feasibility experiment with its recorded results.
 
-## Day 2 starting point
+## Day 2 deliverables
 
-Implement `bubble_sort(values)` first, including its early-exit condition, and
-test the shared contract against Python's `sorted(original)`. Repeat for
-Selection, Insertion, and Merge Sort. Run all correctness cases before building
-the performance runner. The full contracts are in [ARCHITECTURE.md](ARCHITECTURE.md).
+- [x] Implement Bubble Sort with early exit for sorted input.
+- [x] Implement Selection Sort using suffix-minimum selection.
+- [x] Implement Insertion Sort using shifts within a sorted prefix.
+- [x] Implement Merge Sort with one reusable auxiliary buffer.
+- [x] Document behavior, complexity, stability, and the shared list contract.
+- [x] Verify the assignment example manually with all four algorithms.
+- [x] Add automated edge-case, exhaustive small-input, and seeded random tests.
+- [x] Pass all 93 algorithm tests before benchmark development.
+
+Validation: `.venv/Scripts/python.exe -m pytest -q` reports **93 passed** on
+Python 3.14.4. Each function returns the same list object and matches the
+independent built-in sorting oracle. The demonstration entry point runs all
+four algorithms without producing benchmark measurements. Details are in
+[ALGORITHMS.md](ALGORITHMS.md) and [TEST_PLAN.md](TEST_PLAN.md).
+
+## Day 3 starting point
+
+Implement and test the four dataset generators using the common seeded
+multiset and partial-swap rule in [BENCHMARK_METHODOLOGY.md](BENCHMARK_METHODOLOGY.md).
+Check sizes, ordering, equal value multiplicities, reproducibility, and isolation
+from global random state before integrating the Day 4 benchmark runner.
 
 ## Day 1 decisions to carry forward
 

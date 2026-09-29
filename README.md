@@ -4,9 +4,10 @@ A Python assignment comparing Bubble, Selection, Insertion, and Merge Sort
 across four dataset orderings and four sizes. The question is: **how do sorting
 performance and scalability change with input size and ordering?**
 
-**Status:** Day 1 setup and design. Algorithm implementation starts on Day 2.
-The module and test files are documented placeholders. Full benchmarks, charts,
-and performance recommendations are scheduled for later days.
+**Status:** Days 1 and 2 complete. All four sorting algorithms are implemented
+and pass 93 automated tests. Dataset generation, full benchmarks, charts, and
+performance recommendations are scheduled for later days; their modules remain
+documented placeholders.
 
 ## Setup and run
 
@@ -20,17 +21,32 @@ python -m venv .venv
 
 Calling the virtual environment's interpreter directly avoids requiring a
 PowerShell activation script. On macOS/Linux use `.venv/bin/python` instead.
-The Day 1 entry point and runtime spike use only the standard library and can
+The sorting demonstration and Day 1 runtime spike use only the standard library and can
 also be run directly with `python main.py` and `python scripts/runtime_spike.py`.
 
-When Day 2 tests are implemented, run:
+Run the algorithm correctness tests:
 
 ```powershell
 .\.venv\Scripts\python.exe -m pytest
 ```
 
-Day 1 has no correctness tests yet; pytest would currently report no tests
-collected. The setup does not claim the planned algorithms are working.
+`main.py` runs each algorithm on `[8, 3, 1, 6, 4]` and displays
+`[1, 3, 4, 6, 8]`. This is a correctness demonstration; it does not time sorts
+or generate benchmark results.
+
+Use an algorithm directly:
+
+```python
+from algorithms import merge_sort
+
+values = [8, 3, 1, 6, 4]
+result = merge_sort(values)
+assert result is values
+assert values == [1, 3, 4, 6, 8]
+```
+
+Every algorithm modifies and returns the supplied list. See the
+[algorithm guide](docs/ALGORITHMS.md) for behavior and complexity.
 
 ## Required experiment
 
@@ -48,7 +64,7 @@ Generation, copying, validation, and CSV writing are outside the timed interval.
 ## Repository layout
 
 ```text
-main.py                 Entry point (status display on Day 1)
+main.py                 Four-algorithm correctness demonstration
 requirements.txt        pytest, pandas, matplotlib
 algorithms/             Four sorting algorithms (Day 2)
 data/                   Dataset generation (Day 3)
@@ -69,6 +85,7 @@ docs/                   Requirements, plans, methodology, and reports
 - [Architecture and benchmark workflow](docs/ARCHITECTURE.md)
 - [Benchmark methodology](docs/BENCHMARK_METHODOLOGY.md)
 - [Test plan](docs/TEST_PLAN.md)
+- [Algorithm implementations and complexity](docs/ALGORITHMS.md)
 - [Day 1 runtime spike](docs/RUNTIME_SPIKE.md)
 - [Performance analysis — pending](docs/PERFORMANCE_ANALYSIS.md)
 - [Recommendation guide — pending](docs/RECOMMENDATION_GUIDE.md)
