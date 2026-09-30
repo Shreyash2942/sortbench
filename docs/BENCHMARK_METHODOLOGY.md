@@ -1,6 +1,7 @@
 # Benchmark methodology
 
-This is the Day 1 experimental design, not a record of completed benchmarks.
+This is the experimental design established on Day 1, with dataset generation
+implemented on Day 3. It is not a record of completed benchmarks.
 
 ## Required matrix
 
@@ -14,6 +15,12 @@ This is the Day 1 experimental design, not a record of completed benchmarks.
 Use a local `random.Random(seed)` instance, not global random state. Set the
 base seed to 506 and derive each size's seed as `506 + size`.
 
+The implemented API applies this rule when `seed` is omitted or None. Every
+generator also accepts an explicit integer seed, including zero or negative
+integers, so custom comparisons can use the same base multiset. Do not mix
+different seeds when comparing orderings for one scenario. Record the effective
+integer seed, not None, in the future CSV. See [DATA_GENERATION.md](DATA_GENERATION.md).
+
 For each size, generate `size` integer draws using `randint(0, 10 * size)`.
 Duplicates are allowed. Use this same base multiset for all four orderings:
 
@@ -23,6 +30,10 @@ Duplicates are allowed. Use this same base multiset for all four orderings:
 | Sorted | The base values arranged in ascending order. |
 | Reverse-sorted | The sorted base values reversed, giving nonincreasing order. |
 | Partially sorted | Start with sorted base values; perform `size // 20` swaps, each using two distinct random indices from a local generator seeded with `seed + 1`. |
+
+Each swap chooses its indices using `rng.sample(range(size), 2)`. This separate
+generator keeps the swap sequence independent of how many base values were
+drawn. All generators preserve Python's global random state.
 
 The partially sorted rule performs 5% as many swaps as there are elements; it
 does **not** guarantee exactly 5% of elements are displaced. Repeated indices

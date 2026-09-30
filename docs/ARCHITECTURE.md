@@ -1,9 +1,10 @@
 # Architecture
 
 SortBench is a local Python program built from small modules. The following
-diagram describes the intended full system. As of Day 2, the four sorting
-functions, algorithm tests, and a demonstration entry point are implemented.
-Dataset generation, benchmarking, analysis, and plotting remain placeholders.
+diagram describes the intended full system. As of Day 3, the four sorting
+functions, four dataset generators, their correctness/integration tests, and
+a demonstration entry point are implemented. Benchmarking, analysis, and
+plotting remain placeholders.
 
 ```text
 main.py
@@ -26,8 +27,11 @@ main.py
   Its allocation is part of the sorting time. No implementation calls `sorted()`
   or `list.sort()`.
 - Generators return a fresh `list[int]`, accept a nonnegative integer `size`, and
-  expose an optional keyword `seed` for random and partially sorted data. Reject
-  invalid sizes clearly. The runner supplies the documented scenario seed.
+  expose an optional keyword `seed` for all four orderings. An omitted or None
+  seed resolves to `506 + size`. Explicit integer seeds override it. Equal
+  sizes/seeds produce equal value multisets across orderings. Invalid size/seed
+  types (including booleans) raise TypeError; negative sizes raise ValueError.
+  The future runner records the effective seed in its result rows.
 - The timing utility accepts a sorting callable and an already copied list;
   it returns the sorting result and elapsed seconds. It performs no generation,
   copying, validation, or CSV output inside the timed interval.

@@ -4,10 +4,10 @@ A Python assignment comparing Bubble, Selection, Insertion, and Merge Sort
 across four dataset orderings and four sizes. The question is: **how do sorting
 performance and scalability change with input size and ordering?**
 
-**Status:** Days 1 and 2 complete. All four sorting algorithms are implemented
-and pass 93 automated tests. Dataset generation, full benchmarks, charts, and
-performance recommendations are scheduled for later days; their modules remain
-documented placeholders.
+**Status:** Days 1–3 complete. All four sorting algorithms and all four dataset
+generators are implemented. The suite passes 268 tests (93 algorithm tests and
+175 dataset/integration tests). Benchmark timing, CSV export, full experiments,
+charts, and recommendations remain scheduled for later days.
 
 ## Setup and run
 
@@ -24,15 +24,16 @@ PowerShell activation script. On macOS/Linux use `.venv/bin/python` instead.
 The sorting demonstration and Day 1 runtime spike use only the standard library and can
 also be run directly with `python main.py` and `python scripts/runtime_spike.py`.
 
-Run the algorithm correctness tests:
+Run the complete correctness test suite:
 
 ```powershell
 .\.venv\Scripts\python.exe -m pytest
 ```
 
 `main.py` runs each algorithm on `[8, 3, 1, 6, 4]` and displays
-`[1, 3, 4, 6, 8]`. This is a correctness demonstration; it does not time sorts
-or generate benchmark results.
+`[1, 3, 4, 6, 8]`, followed by examples of all four dataset types using 20
+elements and seed 0. This demonstration does not time sorts or generate
+benchmark results.
 
 Use an algorithm directly:
 
@@ -47,6 +48,20 @@ assert values == [1, 3, 4, 6, 8]
 
 Every algorithm modifies and returns the supplied list. See the
 [algorithm guide](docs/ALGORITHMS.md) for behavior and complexity.
+
+Generate reproducible datasets:
+
+```python
+from data import SIZES, generate_random, generate_partially_sorted
+
+assert SIZES == [1000, 5000, 10000, 50000]
+random_values = generate_random(1000)  # Default seed: 506 + 1000
+partial_values = generate_partially_sorted(1000)
+assert sorted(random_values) == sorted(partial_values)
+```
+
+All generators accept a keyword `seed` override and return fresh lists. See the
+[dataset guide](docs/DATA_GENERATION.md) for ordering, seed, and validation rules.
 
 ## Required experiment
 
@@ -64,7 +79,7 @@ Generation, copying, validation, and CSV writing are outside the timed interval.
 ## Repository layout
 
 ```text
-main.py                 Four-algorithm correctness demonstration
+main.py                 Sorting and dataset-generation demonstration
 requirements.txt        pytest, pandas, matplotlib
 algorithms/             Four sorting algorithms (Day 2)
 data/                   Dataset generation (Day 3)
@@ -86,6 +101,7 @@ docs/                   Requirements, plans, methodology, and reports
 - [Benchmark methodology](docs/BENCHMARK_METHODOLOGY.md)
 - [Test plan](docs/TEST_PLAN.md)
 - [Algorithm implementations and complexity](docs/ALGORITHMS.md)
+- [Dataset generation and reproducibility](docs/DATA_GENERATION.md)
 - [Day 1 runtime spike](docs/RUNTIME_SPIKE.md)
 - [Performance analysis — pending](docs/PERFORMANCE_ANALYSIS.md)
 - [Recommendation guide — pending](docs/RECOMMENDATION_GUIDE.md)

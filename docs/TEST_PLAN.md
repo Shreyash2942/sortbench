@@ -1,8 +1,10 @@
 # Test plan
 
 Day 1 validated the structure, imports, entry point, and runtime spike.
-Day 2 implements `tests/test_algorithms.py`: **93 tests pass** with Python
-3.14.4. Dataset and benchmark test modules remain placeholders until Days 3–4.
+Day 2 implemented `tests/test_algorithms.py`: **93 algorithm tests pass**.
+Day 3 adds **175 dataset and integration tests** in `tests/test_data_generator.py`.
+The complete suite has **268 passing tests** with Python 3.14.4. Benchmark
+tests remain scheduled for Day 4.
 
 The suite checks each algorithm against Python's `sorted()` and verifies that
 the returned object is the supplied list. It covers 13 named edge cases, every
@@ -12,6 +14,14 @@ verify one linear comparison pass for already sorted Bubble/Insertion inputs
 and preservation of equal-value order for Bubble, Insertion, and Merge Sort.
 Selection Sort makes no stability guarantee. These are correctness checks;
 they do not establish measured performance rankings.
+
+Dataset checks exercise all four required sizes, including 50,000, plus zero,
+singleton, and the 19/20-element swap boundary. They verify integer value bounds,
+ordering, multiset preservation, seeded reference outputs, default/explicit seed
+equivalence, fresh list storage, input validation, and unchanged global random
+state. Golden swap sequences check both a single swap and repeated swaps that
+reuse an index. Small integration cases run every sorter on every dataset type;
+large quadratic sorting benchmarks are not part of this suite.
 
 | Stage | Checks | Acceptance |
 |---|---|---|

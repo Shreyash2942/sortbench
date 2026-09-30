@@ -7,7 +7,7 @@ This file tracks implementation status rather than treating planned work as done
 |---|---|---|
 | 1 | Repository, structure, README, requirements, architecture, benchmark method, runtime spike | Complete |
 | 2 | Implement and test four sorting algorithms | Complete |
-| 3 | Implement and test four dataset generators | Pending |
+| 3 | Implement and test four dataset generators | Complete |
 | 4 | Implement timer, runner, validation, CSV export | Pending |
 | 5 | Execute and validate the complete performance matrix | Pending |
 | 6 | Analyze results, generate charts and recommendations, draft analysis | Pending |
@@ -61,12 +61,29 @@ independent built-in sorting oracle. The demonstration entry point runs all
 four algorithms without producing benchmark measurements. Details are in
 [ALGORITHMS.md](ALGORITHMS.md) and [TEST_PLAN.md](TEST_PLAN.md).
 
-## Day 3 starting point
+## Day 3 deliverables
 
-Implement and test the four dataset generators using the common seeded
-multiset and partial-swap rule in [BENCHMARK_METHODOLOGY.md](BENCHMARK_METHODOLOGY.md).
-Check sizes, ordering, equal value multiplicities, reproducibility, and isolation
-from global random state before integrating the Day 4 benchmark runner.
+- [x] Implement random, sorted, reverse-sorted, and partially sorted generators.
+- [x] Support configurable nonnegative integer sizes and export required SIZES.
+- [x] Add deterministic default seeds and explicit integer seed overrides.
+- [x] Preserve the common multiset across all four orderings for a size/seed.
+- [x] Implement the documented `size // 20` partial-swap rule.
+- [x] Verify size, ordering, reproducibility, fresh storage, and global RNG isolation.
+- [x] Document methodology, API examples, validation, and seed limitations.
+
+Validation on 2026-09-30: `.venv/Scripts/python.exe -m pytest -q` reports
+**268 passed** (93 algorithm tests plus 175 dataset/integration tests).
+All required generation sizes, including 50,000, are exercised. Small integration
+cases verify all 16 algorithm/dataset combinations. The demonstration includes
+all four generated orderings; it produces no benchmark results.
+See [DATA_GENERATION.md](DATA_GENERATION.md) for the implemented contracts.
+
+## Day 4 starting point
+
+Implement `time.perf_counter()` timing, benchmark iteration, input copies,
+correctness validation, and CSV export. Keep generation and validation outside
+the timed call. Reuse the Day 3 generators and record the effective seed per
+scenario using [BENCHMARK_METHODOLOGY.md](BENCHMARK_METHODOLOGY.md).
 
 ## Day 1 decisions to carry forward
 
