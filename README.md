@@ -4,10 +4,11 @@ A Python assignment comparing Bubble, Selection, Insertion, and Merge Sort
 across four dataset orderings and four sizes. The question is: **how do sorting
 performance and scalability change with input size and ordering?**
 
-**Status:** Days 1–3 complete. All four sorting algorithms and all four dataset
-generators are implemented. The suite passes 268 tests (93 algorithm tests and
-175 dataset/integration tests). Benchmark timing, CSV export, full experiments,
-charts, and recommendations remain scheduled for later days.
+**Status:** Days 1–4 complete. Sorting, dataset generation, sorting-only timing,
+validated CSV export, and run metadata are implemented. All **301 tests pass**.
+A separate Day 4 smoke run contains 32 real measurements at sizes 10 and 100.
+The required 64-scenario experiment is scheduled for Day 5; charts and analysis
+follow on Day 6.
 
 ## Setup and run
 
@@ -63,6 +64,19 @@ assert sorted(random_values) == sorted(partial_values)
 All generators accept a keyword `seed` override and return fresh lists. See the
 [dataset guide](docs/DATA_GENERATION.md) for ordering, seed, and validation rules.
 
+Run a small benchmark from the repository root:
+
+```powershell
+.\.venv\Scripts\python.exe -c "from benchmark import run_benchmarks; run_benchmarks('results/my_smoke.csv', sizes=[10, 100])"
+```
+
+This writes 32 validated rows and `results/my_smoke.metadata.json`. Each run
+requires a new output filename. Existing results are never overwritten.
+See [the runner guide](docs/BENCHMARK_RUNNER.md) for the full Day 5 command,
+output fields, and handling incomplete runs. The committed
+[Day 4 smoke results](results/day4_smoke.csv) verify the pipeline and are not
+the final experiment dataset.
+
 ## Required experiment
 
 | Dimension | Values |
@@ -99,6 +113,7 @@ docs/                   Requirements, plans, methodology, and reports
 - [Requirements](docs/REQUIREMENTS.md)
 - [Architecture and benchmark workflow](docs/ARCHITECTURE.md)
 - [Benchmark methodology](docs/BENCHMARK_METHODOLOGY.md)
+- [Running benchmarks and interpreting metadata](docs/BENCHMARK_RUNNER.md)
 - [Test plan](docs/TEST_PLAN.md)
 - [Algorithm implementations and complexity](docs/ALGORITHMS.md)
 - [Dataset generation and reproducibility](docs/DATA_GENERATION.md)

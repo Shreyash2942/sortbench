@@ -1,4 +1,4 @@
-"""Demonstrate sorting and dataset generation; benchmarking starts on Day 4."""
+"""Demonstrate sorting and datasets; see the runner guide for benchmark runs."""
 
 from algorithms import bubble_sort, insertion_sort, merge_sort, selection_sort
 from data import (
@@ -12,7 +12,7 @@ from data import (
 def main() -> None:
     """Show the assignment's sorting example and reproducible dataset types."""
     print("SortBench - Sorting Algorithm Performance Analyzer")
-    print("Day 3: sorting algorithms and dataset generators are ready.")
+    print("Day 4: sorting, datasets, timing, and CSV benchmark export are ready.")
     original = [8, 3, 1, 6, 4]
     print(f"Input: {original}")
     for sort in (bubble_sort, selection_sort, insertion_sort, merge_sort):
@@ -25,7 +25,8 @@ def main() -> None:
         generate_partially_sorted,
     ):
         print(f"{generate.__name__}: {generate(20, seed=0)}")
-    print("Next: implement benchmark timing and CSV export on Day 4.")
+    print("See docs/BENCHMARK_RUNNER.md to run a small or full benchmark.")
+    print("Next: execute the full performance experiment on Day 5.")
     print("See docs/PROJECT_PLAN.md for the development checklist.")
 
 

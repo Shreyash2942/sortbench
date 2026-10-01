@@ -1,10 +1,11 @@
 # Architecture
 
 SortBench is a local Python program built from small modules. The following
-diagram describes the intended full system. As of Day 3, the four sorting
-functions, four dataset generators, their correctness/integration tests, and
-a demonstration entry point are implemented. Benchmarking, analysis, and
-plotting remain placeholders.
+diagram describes the intended full system. As of Day 4, sorting, data generation,
+the timer, benchmark runner, CSV/metadata output, tests, and a demonstration
+entry point are implemented. Analysis and plotting remain placeholders.
+`main.py` stays a quick demonstration; the benchmark API is invoked separately
+as described in [BENCHMARK_RUNNER.md](BENCHMARK_RUNNER.md).
 
 ```text
 main.py
@@ -31,12 +32,14 @@ main.py
   seed resolves to `506 + size`. Explicit integer seeds override it. Equal
   sizes/seeds produce equal value multisets across orderings. Invalid size/seed
   types (including booleans) raise TypeError; negative sizes raise ValueError.
-  The future runner records the effective seed in its result rows.
+  The runner records the effective seed in its result rows.
 - The timing utility accepts a sorting callable and an already copied list;
   it returns the sorting result and elapsed seconds. It performs no generation,
   copying, validation, or CSV output inside the timed interval.
 - The runner owns configuration, scenario iteration, copies, expected results,
   validation, and CSV export. It records a row only after correctness validation.
+  It flushes each row and writes adjacent JSON metadata with run status and
+  environment details. Existing output files are protected from overwriting.
 - Analysis and plotting consume CSV data. They do not rerun sorting to obtain
   values. Recommendations identify the measured winner for a scenario and
   explicitly flag ties or missing data.
@@ -63,7 +66,8 @@ Dataset generation and expected-result calculation happen before timing. The
 working-copy cost is excluded equally for all algorithms; temporary storage
 allocated inside a sorting implementation is included. A failed validation
 raises an error naming the scenario and prevents that result from being treated
-as a valid measurement. Already written valid rows may remain for diagnosis.
+as a valid measurement. Already written valid rows remain for diagnosis, and
+metadata records failed/interrupted status and the scenario that stopped the run.
 
 Detailed dataset definitions and timing rules are in
 [BENCHMARK_METHODOLOGY.md](BENCHMARK_METHODOLOGY.md).

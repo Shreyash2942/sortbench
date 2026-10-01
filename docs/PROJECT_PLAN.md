@@ -8,7 +8,7 @@ This file tracks implementation status rather than treating planned work as done
 | 1 | Repository, structure, README, requirements, architecture, benchmark method, runtime spike | Complete |
 | 2 | Implement and test four sorting algorithms | Complete |
 | 3 | Implement and test four dataset generators | Complete |
-| 4 | Implement timer, runner, validation, CSV export | Pending |
+| 4 | Implement timer, runner, validation, CSV export | Complete |
 | 5 | Execute and validate the complete performance matrix | Pending |
 | 6 | Analyze results, generate charts and recommendations, draft analysis | Pending |
 | 7 | Final tests, documentation, retrospective, release | Pending |
@@ -78,12 +78,30 @@ cases verify all 16 algorithm/dataset combinations. The demonstration includes
 all four generated orderings; it produces no benchmark results.
 See [DATA_GENERATION.md](DATA_GENERATION.md) for the implemented contracts.
 
-## Day 4 starting point
+## Day 4 deliverables
 
-Implement `time.perf_counter()` timing, benchmark iteration, input copies,
-correctness validation, and CSV export. Keep generation and validation outside
-the timed call. Reuse the Day 3 generators and record the effective seed per
-scenario using [BENCHMARK_METHODOLOGY.md](BENCHMARK_METHODOLOGY.md).
+- [x] Implement sorting-only `time.perf_counter()` timing.
+- [x] Iterate through all algorithms, dataset types, and selected sizes.
+- [x] Generate each dataset once and copy it independently for every algorithm.
+- [x] Validate sorted values, list identity, and finite nonnegative elapsed time.
+- [x] Export validated CSV rows with an adjacent environment/status JSON file.
+- [x] Preserve prior valid rows and record failure/interruption context.
+- [x] Add tests for timing boundaries, isolation, validation, and persistence.
+- [x] Run a separate small real smoke experiment and verify the saved results.
+
+Validation on 2026-10-01: **301 tests pass** (93 algorithm, 175 dataset/integration,
+33 timer/benchmark). The real [smoke CSV](../results/day4_smoke.csv) contains 32
+validated measurements for sizes 10 and 100; its [metadata](../results/day4_smoke.metadata.json)
+reports complete. This checks the pipeline but does not complete the required
+Day 5 experiment. The full benchmark CSV has not been created.
+
+## Day 5 starting point
+
+Run the required 64 combinations at sizes 1,000, 5,000, 10,000, and 50,000
+using the full-run command in [BENCHMARK_RUNNER.md](BENCHMARK_RUNNER.md).
+Verify coverage, inspect suspect measurements, and document any incomplete
+cases. If repeating measurements, use a consistent comparison set and record
+the revised methodology before calculating averages.
 
 ## Day 1 decisions to carry forward
 

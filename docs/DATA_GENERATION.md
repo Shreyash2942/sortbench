@@ -68,12 +68,12 @@ swaps as elements does not mean exactly 5% of elements are displaced. At most
 
 Built-in sorting here constructs test inputs; it does not implement any of the
 four algorithms being benchmarked. Dataset generation belongs outside the timed
-sorting call. The Day 4 runner will generate each scenario once, make a fresh
-copy per algorithm, and record the effective seed (`506 + size` by default).
+sorting call. The Day 4 runner generates each scenario once, makes a fresh
+copy per algorithm, and records the effective seed (`506 + size` by default).
 
 Run `.venv/Scripts/python.exe -m pytest -q tests/test_data_generator.py` to run
 the 175 dataset/integration cases. They include all required sizes, ordering and
 multiset checks, exact seeded examples, invalid inputs, global-state isolation,
-and all 16 algorithm/dataset combinations on small inputs. Running the full
-suite gives 268 passing tests. No algorithm performance ranking is inferred
+and all 16 algorithm/dataset combinations on small inputs. The complete suite,
+including the Day 4 benchmark tests, has 301 passing tests. No ranking is inferred
 from these correctness checks.

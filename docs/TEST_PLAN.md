@@ -3,8 +3,8 @@
 Day 1 validated the structure, imports, entry point, and runtime spike.
 Day 2 implemented `tests/test_algorithms.py`: **93 algorithm tests pass**.
 Day 3 adds **175 dataset and integration tests** in `tests/test_data_generator.py`.
-The complete suite has **268 passing tests** with Python 3.14.4. Benchmark
-tests remain scheduled for Day 4.
+Day 4 adds **33 timer and benchmark tests** in `tests/test_benchmark.py`.
+The complete suite has **301 passing tests** with Python 3.14.4.
 
 The suite checks each algorithm against Python's `sorted()` and verifies that
 the returned object is the supplied list. It covers 13 named edge cases, every
@@ -22,6 +22,15 @@ equivalence, fresh list storage, input validation, and unchanged global random
 state. Golden swap sequences check both a single swap and repeated swaps that
 reuse an index. Small integration cases run every sorter on every dataset type;
 large quadratic sorting benchmarks are not part of this suite.
+
+Benchmark tests use a controlled clock to verify exact timing boundaries,
+exercise real small-input runs and CSV round-tripping, and check input isolation,
+seed recording, bad-result rejection, and metadata. Errors, keyboard interrupts,
+and existing-output protection are covered. A test with cheap test doubles
+verifies all 64 required configuration keys without running large quadratic
+sorts; its synthetic rows exist only in pytest's temporary directory. The
+separate committed Day 4 smoke CSV contains 32 actual measurements on sizes
+10 and 100. Neither is the final Day 5 experiment.
 
 | Stage | Checks | Acceptance |
 |---|---|---|

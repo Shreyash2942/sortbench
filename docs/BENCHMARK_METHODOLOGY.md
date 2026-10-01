@@ -1,7 +1,8 @@
 # Benchmark methodology
 
 This is the experimental design established on Day 1, with dataset generation
-implemented on Day 3. It is not a record of completed benchmarks.
+implemented on Day 3 and the timing/export pipeline implemented on Day 4.
+The full required experiment remains scheduled for Day 5.
 
 ## Required matrix
 
@@ -19,7 +20,7 @@ The implemented API applies this rule when `seed` is omitted or None. Every
 generator also accepts an explicit integer seed, including zero or negative
 integers, so custom comparisons can use the same base multiset. Do not mix
 different seeds when comparing orderings for one scenario. Record the effective
-integer seed, not None, in the future CSV. See [DATA_GENERATION.md](DATA_GENERATION.md).
+integer seed, not None, in the CSV. See [DATA_GENERATION.md](DATA_GENERATION.md).
 
 For each size, generate `size` integer draws using `randint(0, 10 * size)`.
 Duplicates are allowed. Use this same base multiset for all four orderings:
@@ -64,18 +65,26 @@ Insertion, Merge) on one machine/environment. Close avoidable background work
 and record any interruptions. Fixed order can introduce drift; discuss this
 limitation in the final analysis. No threaded or parallel experiment execution.
 
-## Planned output
+## Implemented output
 
-`results/benchmark_results.csv` will have this header:
+The full Day 5 dataset will be `results/benchmark_results.csv`. The runner uses
+this header for every output file:
 
 ```csv
 algorithm,dataset_type,size,trial,seed,execution_time_seconds,valid
 ```
 
-Use `trial=1` initially, seconds as the time unit, and `valid=True` only after
-validation. Record the timestamp, Python version, platform/processor, seed rule,
-trial count, and timing conditions alongside the CSV in a run metadata file.
-The CSV is intentionally absent until real benchmark measurements exist.
+The runner uses `trial=1`, seconds as the time unit, and `valid=True` only after
+validating list identity, sorted values, and finite nonnegative elapsed time.
+It records timestamps, Python version, platform/processor, effective seeds,
+trial count, timing method, scenario order, and completion status in an adjacent
+`<stem>.metadata.json` file. Both outputs must be new files. Validated CSV rows
+are flushed as they finish; caught errors and interrupts update metadata.
+
+Day 4's `results/day4_smoke.csv` contains 32 real pipeline-check measurements
+at sizes 10 and 100. It is separate from the required 64 scenarios and provides
+no final algorithm rankings. The full `benchmark_results.csv` is still absent.
+See [BENCHMARK_RUNNER.md](BENCHMARK_RUNNER.md) for commands and failure semantics.
 
 ## Runtime feasibility
 
