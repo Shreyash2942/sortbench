@@ -1,0 +1,33 @@
+{
+  "validated_at_utc": "2026-10-03T00:08:17.245783+00:00",
+  "status": "passed",
+  "scenario_count": 64,
+  "comparison_groups": 16,
+  "csv_sha256": "35a3ee57bb7b1b9c7f433e3d91a3def5df9f5a03d0a3c70b4829369802419484",
+  "metadata_sha256": "f121043784d057f8306cc34885d2df58ca31be4bf2271e7184998e54ac38dce7",
+  "checks": [
+    "exact schema",
+    "all 64 unique required combinations",
+    "one valid trial per scenario",
+    "finite nonnegative elapsed seconds",
+    "matching integer seeds",
+    "complete consistent metadata",
+    "chronological timezone-aware timestamps",
+    "documented scenario order"
+  ],
+  "recorded_sort_seconds": 396.0378462000517,
+  "measured_fastest_group_counts": {
+    "Merge Sort": 12,
+    "Bubble Sort": 3,
+    "Insertion Sort": 1
+  },
+  "method_note": "Final dataset is the entire repeat run. Initial attempt archived due apparent pause; no averaging or row-by-row selection across attempts.",
+  "scope_note": "Artifact integrity audit; actual sorting output was validated by the runner during execution.",
+  "diagnostic_scenario_count": 32,
+  "supporting_sha256": {
+    "diagnostic_5000_10000.csv": "631677350f66fb2f0d8aeae6a42b2b94371162a9766d4f63a022e048605d55cb",
+    "diagnostic_5000_10000.metadata.json": "816c715a3653a8ae1950a8d7a34c4aa430fa5d20f8bfd22338d8ccfdf6e797c0",
+    "scenario_winners.csv": "1a86af41f2c95d51d4a60380697f826a3df0d1d1ce7a1a315fd78f74dbeedb01",
+    "run_review.json": "5f15997a95acbc7690db53468fa29273a508356fee78d2458389ae02ab74bf3f"
+  }
+}

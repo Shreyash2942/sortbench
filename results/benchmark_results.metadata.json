@@ -1,0 +1,39 @@
+{
+  "status": "complete",
+  "started_at_utc": "2026-10-03T00:01:01.880690+00:00",
+  "finished_at_utc": "2026-10-03T00:07:38.086757+00:00",
+  "python_version": "3.14.4",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "processor": "AMD64 Family 26 Model 36 Stepping 0, AuthenticAMD",
+  "sizes": [
+    1000,
+    5000,
+    10000,
+    50000
+  ],
+  "algorithms": [
+    "Bubble Sort",
+    "Selection Sort",
+    "Insertion Sort",
+    "Merge Sort"
+  ],
+  "dataset_types": [
+    "random",
+    "sorted",
+    "reverse_sorted",
+    "partially_sorted"
+  ],
+  "trial_count": 1,
+  "effective_seeds": {
+    "1000": 1506,
+    "5000": 5506,
+    "10000": 10506,
+    "50000": 50506
+  },
+  "required_sizes_selected": true,
+  "expected_rows": 64,
+  "completed_rows": 64,
+  "timing_method": "time.perf_counter; sorting call only; seconds",
+  "execution_order": "size, dataset type, algorithm; sequential; one trial",
+  "csv_file": "benchmark_results.csv"
+}
