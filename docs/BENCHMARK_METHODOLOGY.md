@@ -2,7 +2,8 @@
 
 This is the experimental design established on Day 1, with dataset generation
 implemented on Day 3 and the timing/export pipeline implemented on Day 4.
-The full required experiment remains scheduled for Day 5.
+The full required experiment was completed on Day 5; see
+[DAY5_OBSERVATIONS.md](DAY5_OBSERVATIONS.md) for measurements and conditions.
 
 ## Required matrix
 
@@ -83,8 +84,26 @@ are flushed as they finish; caught errors and interrupts update metadata.
 
 Day 4's `results/day4_smoke.csv` contains 32 real pipeline-check measurements
 at sizes 10 and 100. It is separate from the required 64 scenarios and provides
-no final algorithm rankings. The full `benchmark_results.csv` is still absent.
+no final algorithm rankings. The full `benchmark_results.csv` now contains
+the 64 primary Day 5 measurements.
 See [BENCHMARK_RUNNER.md](BENCHMARK_RUNNER.md) for commands and failure semantics.
+
+## Day 5 run selection and diagnostics
+
+The initial complete run had an apparent long pause during the 50,000-element
+reverse-sorted Bubble Sort measurement. Its CSV and metadata are preserved
+unchanged in `results/initial_run/` and excluded from timing conclusions.
+The full matrix was repeated using identical code, seeds, scenario order, and
+one trial per scenario. Only that complete repeat supplies the primary CSV;
+no rows were selected individually between attempts and no averages were
+calculated. Windows received a temporary stay-awake request for the repeat,
+released afterward without changing saved power settings.
+
+A further 32-scenario diagnostic repeated all algorithms/types at sizes 5,000
+and 10,000 to check ranking changes and irregular small measurements. Those rows
+remain in `results/diagnostic_5000_10000.csv` and are neither substituted into nor
+averaged with the primary data. Conditions, hashes, and limitations are documented
+in [RESULT_VALIDATION.md](RESULT_VALIDATION.md) and the observations report.
 
 ## Runtime feasibility
 

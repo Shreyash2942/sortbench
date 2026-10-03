@@ -4,7 +4,8 @@ Day 1 validated the structure, imports, entry point, and runtime spike.
 Day 2 implemented `tests/test_algorithms.py`: **93 algorithm tests pass**.
 Day 3 adds **175 dataset and integration tests** in `tests/test_data_generator.py`.
 Day 4 adds **33 timer and benchmark tests** in `tests/test_benchmark.py`.
-The complete suite has **301 passing tests** with Python 3.14.4.
+Day 5 adds **37 persisted-result audit tests** in `tests/test_result_validation.py`.
+The complete suite has **338 passing tests** with Python 3.14.4.
 
 The suite checks each algorithm against Python's `sorted()` and verifies that
 the returned object is the supplied list. It covers 13 named edge cases, every
@@ -31,6 +32,13 @@ verifies all 64 required configuration keys without running large quadratic
 sorts; its synthetic rows exist only in pytest's temporary directory. The
 separate committed Day 4 smoke CSV contains 32 actual measurements on sizes
 10 and 100. Neither is the final Day 5 experiment.
+
+Day 5 tests reject missing/duplicate/unexpected scenarios, malformed CSV,
+invalid timing values, inconsistent seeds, incorrect trial/valid flags,
+non-complete metadata, invalid timestamps, and mismatched row order. Synthetic
+fixtures remain in temporary directories. The actual primary results also
+passed the audit: all 64 unique required scenarios are present, with no invalid
+sorting outputs reported during execution. This file audit does not rerun sorts.
 
 | Stage | Checks | Acceptance |
 |---|---|---|

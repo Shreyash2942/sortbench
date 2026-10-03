@@ -75,5 +75,5 @@ Run `.venv/Scripts/python.exe -m pytest -q tests/test_data_generator.py` to run
 the 175 dataset/integration cases. They include all required sizes, ordering and
 multiset checks, exact seeded examples, invalid inputs, global-state isolation,
 and all 16 algorithm/dataset combinations on small inputs. The complete suite,
-including the Day 4 benchmark tests, has 301 passing tests. No ranking is inferred
+including benchmark and result-audit tests, has 338 passing tests. No ranking is inferred
 from these correctness checks.

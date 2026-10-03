@@ -9,7 +9,7 @@ This file tracks implementation status rather than treating planned work as done
 | 2 | Implement and test four sorting algorithms | Complete |
 | 3 | Implement and test four dataset generators | Complete |
 | 4 | Implement timer, runner, validation, CSV export | Complete |
-| 5 | Execute and validate the complete performance matrix | Pending |
+| 5 | Execute and validate the complete performance matrix | Complete |
 | 6 | Analyze results, generate charts and recommendations, draft analysis | Pending |
 | 7 | Final tests, documentation, retrospective, release | Pending |
 
@@ -93,15 +93,32 @@ Validation on 2026-10-01: **301 tests pass** (93 algorithm, 175 dataset/integrat
 33 timer/benchmark). The real [smoke CSV](../results/day4_smoke.csv) contains 32
 validated measurements for sizes 10 and 100; its [metadata](../results/day4_smoke.metadata.json)
 reports complete. This checks the pipeline but does not complete the required
-Day 5 experiment. The full benchmark CSV has not been created.
+Day 5 experiment. At the Day 4 checkpoint, the full benchmark CSV had not been created.
 
-## Day 5 starting point
+## Day 5 deliverables
 
-Run the required 64 combinations at sizes 1,000, 5,000, 10,000, and 50,000
-using the full-run command in [BENCHMARK_RUNNER.md](BENCHMARK_RUNNER.md).
-Verify coverage, inspect suspect measurements, and document any incomplete
-cases. If repeating measurements, use a consistent comparison set and record
-the revised methodology before calculating averages.
+- [x] Run all 64 required combinations, including 50,000-element cases.
+- [x] Preserve and review the initial run's apparent long-pause anomaly.
+- [x] Repeat the full matrix and use that entire repeat as the final dataset.
+- [x] Audit schema, coverage, duplicates, times, seeds, and metadata.
+- [x] Compare algorithms by size and ordering and identify observed winners.
+- [x] Check noisy 5,000/10,000-element groups in a separate diagnostic run.
+- [x] Document conditions and limitations without averaging or cherry-picking.
+- [x] Add automated tests for persisted-result validation.
+
+Validation on 2026-10-02 (local date): **338 tests pass**. The final CSV has
+64 unique validated rows and complete metadata. The full repeat took 396.21
+seconds wall time and 393.31 seconds CPU time. Merge Sort was fastest in 12
+size/type groups, Bubble Sort in 3, and Insertion Sort in 1 in the primary run.
+See [DAY5_OBSERVATIONS.md](DAY5_OBSERVATIONS.md) for timings and diagnostic
+findings. Initial and diagnostic runs remain separate from the primary dataset.
+
+## Day 6 starting point
+
+Load the validated primary CSV, produce time-versus-size and dataset-type
+charts, implement measured-result analysis and recommendation logic, and draft
+the 2–3 page analysis. Include observed ranking variability on small timings;
+do not present one-trial winners as statistically established universal choices.
 
 ## Day 1 decisions to carry forward
 

@@ -30,9 +30,11 @@ benchmark experiments or create result files.
 
 The defaults select sizes 1,000, 5,000, 10,000, and 50,000 and write
 `results/benchmark_results.csv` plus `results/benchmark_results.metadata.json`.
-That is 64 scenarios, one recorded trial each. This full run has not been
-performed on Day 4. Large quadratic sorts take substantially longer than the
-small verification run; retain all required sizes in the experiment.
+That is 64 scenarios, one recorded trial each. Day 5 completed this experiment;
+the files now exist, so the default command refuses to overwrite them. To
+reproduce the full run, pass a new path such as `results/my_full_repeat.csv`
+with no `sizes` override. Read [DAY5_OBSERVATIONS.md](DAY5_OBSERVATIONS.md)
+before interpreting results. Retain all required sizes in the experiment.
 
 The API is:
 

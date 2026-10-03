@@ -4,11 +4,10 @@ A Python assignment comparing Bubble, Selection, Insertion, and Merge Sort
 across four dataset orderings and four sizes. The question is: **how do sorting
 performance and scalability change with input size and ordering?**
 
-**Status:** Days 1–4 complete. Sorting, dataset generation, sorting-only timing,
-validated CSV export, and run metadata are implemented. All **301 tests pass**.
-A separate Day 4 smoke run contains 32 real measurements at sizes 10 and 100.
-The required 64-scenario experiment is scheduled for Day 5; charts and analysis
-follow on Day 6.
+**Status:** Days 1–5 complete. All **64 required benchmark scenarios** are
+recorded and independently audited, and **338 tests pass**. The primary dataset
+comes from one complete repeat after an apparent pause affected the initial
+attempt; both attempts are retained. Charts and the final analysis follow on Day 6.
 
 ## Setup and run
 
@@ -77,6 +76,13 @@ output fields, and handling incomplete runs. The committed
 [Day 4 smoke results](results/day4_smoke.csv) verify the pipeline and are not
 the final experiment dataset.
 
+The full [benchmark CSV](results/benchmark_results.csv),
+[metadata](results/benchmark_results.metadata.json), and
+[audit report](results/validation_report.json) are available. Read the
+[Day 5 observations](docs/DAY5_OBSERVATIONS.md) for timings, observed winners,
+and limitations. The primary dataset uses one trial per scenario; no averages
+across attempts or selectively chosen fastest measurements are reported.
+
 ## Required experiment
 
 | Dimension | Values |
@@ -114,6 +120,8 @@ docs/                   Requirements, plans, methodology, and reports
 - [Architecture and benchmark workflow](docs/ARCHITECTURE.md)
 - [Benchmark methodology](docs/BENCHMARK_METHODOLOGY.md)
 - [Running benchmarks and interpreting metadata](docs/BENCHMARK_RUNNER.md)
+- [Result validation](docs/RESULT_VALIDATION.md)
+- [Day 5 measured observations](docs/DAY5_OBSERVATIONS.md)
 - [Test plan](docs/TEST_PLAN.md)
 - [Algorithm implementations and complexity](docs/ALGORITHMS.md)
 - [Dataset generation and reproducibility](docs/DATA_GENERATION.md)
