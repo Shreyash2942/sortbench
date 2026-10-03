@@ -1,0 +1,40 @@
+{
+  "method": "Full repeat after an apparent pause; retain initial evidence; use only the complete repeat for final comparisons. No mixed best-of-run timings or averages.",
+  "benchmark_source_commit": "415e1456595d6072c9abf7f3a63d2820c53ca964",
+  "initial_run": {
+    "scenario_count": 64,
+    "status": "complete but excluded from timing conclusions",
+    "suspect_scenario": {
+      "algorithm": "Bubble Sort",
+      "dataset_type": "reverse_sorted",
+      "size": 50000,
+      "trial": 1,
+      "seed": 50506,
+      "execution_time_seconds": 3927.5729378999677,
+      "valid": true
+    },
+    "observed_process_cpu_seconds_at_57_rows": 380.34375,
+    "csv_sha256": "0ac2bc737b23ea1e8f1f6c6db5dad7168f4712571a37c437a7cb8720c5d044b3",
+    "metadata_sha256": "94b64e69e5c55cb53c361da78afbe9a7b61b7b7087cff111d87cdbbef0638dbf",
+    "cause": "Unconfirmed long pause/suspension or scheduling gap; wall time far exceeded observed CPU time."
+  },
+  "repeat_run": {
+    "status": "complete",
+    "windows_system_awake_request_succeeded": true,
+    "scenario_count": 64,
+    "process_cpu_seconds": 393.3125,
+    "wall_seconds": 396.2068991000415,
+    "awake_request_released": true
+  },
+  "diagnostic_run": {
+    "status": "complete",
+    "scenario_count": 32,
+    "sizes": [
+      5000,
+      10000
+    ],
+    "wall_seconds": 17.083432400017045,
+    "process_cpu_seconds": 16.90625,
+    "purpose": "Check sorted-data winner changes and nonmonotonic small Merge Sort timings. Not substituted into primary results and not averaged."
+  }
+}

@@ -1,0 +1,7 @@
+# Preserve exact bytes for the Day 5 evidence and recorded SHA-256 hashes.
+results/benchmark_results.* -text
+results/initial_run/** -text
+results/diagnostic_5000_10000.* -text
+results/scenario_winners.csv -text
+results/run_review.json -text
+results/validation_report.json -text
