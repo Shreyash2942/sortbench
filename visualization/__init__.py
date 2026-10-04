@@ -1,1 +1,1 @@
-"""Performance chart generation scheduled for Day 6."""
+"""Static performance charts generated from audited measurements."""
