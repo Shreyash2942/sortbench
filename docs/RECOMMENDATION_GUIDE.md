@@ -68,3 +68,7 @@ Machine-readable outputs are in
 [recommendations.json](../results/analysis/recommendations.json). See the
 [analysis workflow](ANALYSIS_WORKFLOW.md) to reproduce them and the
 [performance analysis](PERFORMANCE_ANALYSIS.md) for interpretation.
+
+Reviewed for v1.0.0 against all 16 primary scenario groups. The final
+[three-page analysis](PERFORMANCE_ANALYSIS.pdf) summarizes the measured results
+and theoretical trade-offs. No diagnostic rows replace primary observations.

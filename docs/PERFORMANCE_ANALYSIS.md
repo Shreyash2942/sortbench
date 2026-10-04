@@ -1,8 +1,8 @@
 # SortBench performance analysis
 
-Day 6 draft for the assignment's 2-3 page written analysis. Final editing and
-submission formatting remain part of Day 7. All times below come from the
-[primary CSV](../results/benchmark_results.csv), unless labeled diagnostic.
+Final analysis for SortBench v1.0.0. A formatted three-page version is available
+in [PERFORMANCE_ANALYSIS.pdf](PERFORMANCE_ANALYSIS.pdf). All times below come
+from the [primary CSV](../results/benchmark_results.csv), unless labeled diagnostic.
 
 ## Experiment and evidence
 
