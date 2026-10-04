@@ -4,10 +4,10 @@ A Python assignment comparing Bubble, Selection, Insertion, and Merge Sort
 across four dataset orderings and four sizes. The question is: **how do sorting
 performance and scalability change with input size and ordering?**
 
-**Status:** Days 1–5 complete. All **64 required benchmark scenarios** are
-recorded and independently audited, and **338 tests pass**. The primary dataset
-comes from one complete repeat after an apparent pause affected the initial
-attempt; both attempts are retained. Charts and the final analysis follow on Day 6.
+**Status:** Days 1-6 complete. All **64 required benchmark scenarios** are
+recorded and independently audited, and **358 tests pass**. Six charts,
+comparison tables, measured recommendations, and the performance analysis
+draft are available. Day 7 covers final review, formatting, and release.
 
 ## Setup and run
 
@@ -83,6 +83,27 @@ The full [benchmark CSV](results/benchmark_results.csv),
 and limitations. The primary dataset uses one trial per scenario; no averages
 across attempts or selectively chosen fastest measurements are reported.
 
+## Analysis and charts
+
+Regenerate the derived outputs from the audited primary CSV:
+
+```powershell
+.\.venv\Scripts\python.exe -m analysis.performance_analyzer
+```
+
+See the [analysis workflow](docs/ANALYSIS_WORKFLOW.md) for the API, artifacts,
+and provenance. This command does not rerun benchmarks or change measurements.
+
+![Execution time versus dataset size](results/analysis/charts/time_vs_size.png)
+
+Merge Sort had the lowest recorded time in all 12 random, reverse-sorted,
+and partially sorted groups. Bubble won three sorted groups and Insertion
+one; the separate diagnostic changed their ranking at 10,000 elements.
+These are single-trial observations, not statistically established advantages.
+See the [analysis draft](docs/PERFORMANCE_ANALYSIS.md),
+[recommendation guide](docs/RECOMMENDATION_GUIDE.md), and
+[ordering comparison chart](results/analysis/charts/dataset_comparison.png).
+
 ## Required experiment
 
 | Dimension | Values |
@@ -126,8 +147,8 @@ docs/                   Requirements, plans, methodology, and reports
 - [Algorithm implementations and complexity](docs/ALGORITHMS.md)
 - [Dataset generation and reproducibility](docs/DATA_GENERATION.md)
 - [Day 1 runtime spike](docs/RUNTIME_SPIKE.md)
-- [Performance analysis — pending](docs/PERFORMANCE_ANALYSIS.md)
-- [Recommendation guide — pending](docs/RECOMMENDATION_GUIDE.md)
+- [Performance analysis draft](docs/PERFORMANCE_ANALYSIS.md)
+- [Measured recommendation guide](docs/RECOMMENDATION_GUIDE.md)
 - [Retrospective — pending](docs/RETROSPECTIVE.md)
 
 The target release is `v1.0.0` after seven development days. The original

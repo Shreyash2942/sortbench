@@ -10,7 +10,7 @@ This file tracks implementation status rather than treating planned work as done
 | 3 | Implement and test four dataset generators | Complete |
 | 4 | Implement timer, runner, validation, CSV export | Complete |
 | 5 | Execute and validate the complete performance matrix | Complete |
-| 6 | Analyze results, generate charts and recommendations, draft analysis | Pending |
+| 6 | Analyze results, generate charts and recommendations, draft analysis | Complete |
 | 7 | Final tests, documentation, retrospective, release | Pending |
 
 ## Day 1 deliverables
@@ -113,12 +113,29 @@ size/type groups, Bubble Sort in 3, and Insertion Sort in 1 in the primary run.
 See [DAY5_OBSERVATIONS.md](DAY5_OBSERVATIONS.md) for timings and diagnostic
 findings. Initial and diagnostic runs remain separate from the primary dataset.
 
-## Day 6 starting point
+## Day 6 deliverables
 
-Load the validated primary CSV, produce time-versus-size and dataset-type
-charts, implement measured-result analysis and recommendation logic, and draft
-the 2–3 page analysis. Include observed ranking variability on small timings;
-do not present one-trial winners as statistically established universal choices.
+- [x] Load the primary CSV only after a complete metadata and coverage audit.
+- [x] Export comparison tables, observed winners, and measured growth ratios.
+- [x] Generate six labeled PNG charts for size and ordering comparisons.
+- [x] Implement exact-scenario recommendations with ties and missing-data handling.
+- [x] Write the performance analysis draft and Big-O/space/stability table.
+- [x] Complete the measured recommendation guide and reproduction workflow.
+- [x] Preserve original evidence and record derived-artifact SHA-256 hashes.
+- [x] Test summaries, recommendations, chart data, and end-to-end generation.
+
+Validation on 2026-10-03: **358 tests pass**, including 20 new analysis tests.
+The generated comparisons retain all 64 measurements. Recommendations cover
+all 16 size/type groups; charts show one observation per scenario without
+statistical uncertainty estimates. The separate diagnostic ranking change
+is disclosed. See [ANALYSIS_WORKFLOW.md](ANALYSIS_WORKFLOW.md) and
+[PERFORMANCE_ANALYSIS.md](PERFORMANCE_ANALYSIS.md).
+
+## Day 7 starting point
+
+Perform final regression and deliverable review, finalize the analysis's
+2-3 page submission formatting and documentation, write the retrospective,
+and prepare the planned v1.0.0 release. Day 6 does not mark release work complete.
 
 ## Day 1 decisions to carry forward
 

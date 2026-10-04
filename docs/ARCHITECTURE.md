@@ -1,24 +1,27 @@
 # Architecture
 
-SortBench is a local Python program built from small modules. The following
-diagram describes the intended full system. As of Day 4, sorting, data generation,
-the timer, benchmark runner, CSV/metadata output, tests, and a demonstration
-entry point are implemented. Analysis and plotting remain placeholders.
-`main.py` stays a quick demonstration; the benchmark API is invoked separately
-as described in [BENCHMARK_RUNNER.md](BENCHMARK_RUNNER.md).
+SortBench is a local Python program built from small modules. Days 1-6
+implement sorting, data generation, timing, CSV/metadata persistence, independent
+auditing, measured analysis, recommendations, charts, and tests. `main.py`
+stays a quick demonstration. Benchmark execution and analysis are separate
+so generating charts cannot accidentally rerun expensive timing experiments.
 
 ```text
-main.py
-  -> benchmark/benchmark_runner.py
-       -> data/data_generator.py          create equivalent source datasets
-       -> benchmark/timer.py              time a sorting call
-            -> algorithms/*.py            sort a working copy
-       -> results/benchmark_results.csv   save validated measurements
-  -> analysis/performance_analyzer.py     read CSV, summarize results
-       -> visualization/charts.py         save results/charts/
-       -> analysis/recommendation.py      identify measured winners
-  -> docs/                               interpret results and trade-offs
+main.py                                  sorting and dataset demonstration
+benchmark/benchmark_runner.py            explicit benchmark API
+  -> data/data_generator.py              equivalent source datasets
+  -> benchmark/timer.py -> algorithms/   timing a sort on an independent copy
+  -> results/benchmark_results.csv       validated measurements + metadata
+analysis/performance_analyzer.py         python -m analysis.performance_analyzer
+  -> benchmark/result_validation.py      audit persisted input before loading
+  -> analysis/recommendation.py          exact observed scenario minima
+  -> visualization/charts.py             six static comparison charts
+  -> results/analysis/                   tables, recommendations, charts, hashes
+docs/                                    interpretation and trade-offs
 ```
+
+See [BENCHMARK_RUNNER.md](BENCHMARK_RUNNER.md) and
+[ANALYSIS_WORKFLOW.md](ANALYSIS_WORKFLOW.md) for separate reproduction commands.
 
 ## Component contracts
 

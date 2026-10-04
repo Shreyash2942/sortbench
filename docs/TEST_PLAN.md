@@ -5,7 +5,8 @@ Day 2 implemented `tests/test_algorithms.py`: **93 algorithm tests pass**.
 Day 3 adds **175 dataset and integration tests** in `tests/test_data_generator.py`.
 Day 4 adds **33 timer and benchmark tests** in `tests/test_benchmark.py`.
 Day 5 adds **37 persisted-result audit tests** in `tests/test_result_validation.py`.
-The complete suite has **338 passing tests** with Python 3.14.4.
+Day 6 adds **20 analysis, recommendation, and chart tests** in `tests/test_analysis.py`.
+The complete suite has **358 passing tests** with Python 3.14.4.
 
 The suite checks each algorithm against Python's `sorted()` and verifies that
 the returned object is the supplied list. It covers 13 named edge cases, every
@@ -39,6 +40,16 @@ non-complete metadata, invalid timestamps, and mismatched row order. Synthetic
 fixtures remain in temporary directories. The actual primary results also
 passed the audit: all 64 unique required scenarios are present, with no invalid
 sorting outputs reported during execution. This file audit does not rerun sorts.
+
+Day 6 verifies hand-computable comparison values, tied minima, undefined
+zero-baseline growth, unsupported and incomplete recommendation scenarios,
+and invalid timing values. Chart tests inspect plotted coordinates, series,
+units, category order, and zero-time handling. An end-to-end test uses the
+committed primary evidence to regenerate all six charts and every table in
+a temporary directory, checks recommendation minima and provenance hashes,
+and confirms that input bytes remain unchanged. Incomplete input fails
+before output creation. Input/output filename collisions are rejected to
+protect source measurements. No timing benchmark is rerun by these tests.
 
 | Stage | Checks | Acceptance |
 |---|---|---|
