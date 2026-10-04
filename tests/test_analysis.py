@@ -154,8 +154,11 @@ def test_pipeline_rejects_incomplete_input_before_creating_outputs(tmp_path):
     assert not (tmp_path / "derived").exists()
 
 
-def test_pipeline_refuses_to_overwrite_input_with_derived_table(tmp_path):
-    path = tmp_path / "comparison.csv"
+@pytest.mark.parametrize("filename", ["comparison.csv", "observed_winners.csv", "growth.csv",
+                                      "recommendations.json", "provenance.json", "charts/random.png"])
+def test_pipeline_refuses_to_overwrite_input_with_derived_table(tmp_path, filename):
+    path = tmp_path / filename
+    path.parent.mkdir(parents=True, exist_ok=True)
     before = PRIMARY_CSV.read_bytes()
     path.write_bytes(before)
     metadata = json.loads(PRIMARY_CSV.with_suffix(".metadata.json").read_text())

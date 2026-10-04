@@ -65,8 +65,12 @@ def generate_analysis(csv_path: str | Path = PRIMARY_CSV,
     path, destination = Path(csv_path), Path(output_dir)
     results = load_results(path)
     table_names = ("comparison.csv", "observed_winners.csv", "growth.csv", "recommendations.json")
-    if path.resolve() in {(destination / name).resolve() for name in table_names}:
-        raise ValueError("The output directory would overwrite the input CSV")
+    chart_names = ("time_vs_size", *DATASET_GENERATORS, "dataset_comparison")
+    output_paths = [*(destination / name for name in (*table_names, "provenance.json")),
+                    *(destination / "charts" / f"{name}.png" for name in chart_names)]
+    source_files = [path, path.with_suffix(".metadata.json")]
+    if {p.resolve() for p in source_files} & {p.resolve() for p in output_paths}:
+        raise ValueError("The output directory would overwrite input evidence")
     destination.mkdir(parents=True, exist_ok=True)
     comparison_table(results).to_csv(destination / "comparison.csv")
     observed_winners(results).to_csv(destination / "observed_winners.csv", index=False)
@@ -78,7 +82,6 @@ def generate_analysis(csv_path: str | Path = PRIMARY_CSV,
     )
     chart_paths = save_charts(results, destination / "charts")
     import matplotlib
-    source_files = [path, path.with_suffix(".metadata.json")]
     generated_files = sorted([*(destination / name for name in table_names), *chart_paths])
     provenance = {
         "source_files": {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in source_files},
