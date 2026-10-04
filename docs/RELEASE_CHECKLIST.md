@@ -1,8 +1,9 @@
 # SortBench v1.0.0 release checklist
 
-The implementation, evidence, report, and local release checks are complete.
-GitHub Release publication requires an authenticated GitHub CLI session; the
-SSH Git remote alone does not provide access to the Releases API.
+The implementation, evidence, report, and local release checks are complete,
+and all project work is pushed to GitHub. The user chose to defer creating a
+GitHub Release page; no GitHub CLI authentication is needed for the completed
+code push. The existing annotated `v1.0.0` Git tag is also pushed.
 
 ## Deliverable review
 
@@ -19,8 +20,8 @@ SSH Git remote alone does not provide access to the Releases API.
 | README, requirements, architecture and test plan | Linked from [README](../README.md) | Complete |
 | Retrospective | [Project retrospective](RETROSPECTIVE.md) | Complete |
 | Incremental Git history | Focused commits across Days 1-7; no rewritten history | Reviewed |
-| Source, results, report and charts included in release | Versioned repository tree and annotated `v1.0.0` tag | Prepared |
-| Stable GitHub Release page | Publish using the command below after CLI login | Pending authentication |
+| Source, results, report and charts included in release | Versioned repository tree and annotated `v1.0.0` tag | Pushed |
+| Stable GitHub Release page | Optional future publication; deferred by user | Deferred |
 
 ## Verification record
 
@@ -54,9 +55,10 @@ The lock file records the verified environment; other platforms and Python
 versions were not tested. The direct dependencies remain in `requirements.txt`.
 The report formatter uses matplotlib and checks page bounds before finishing.
 
-## Publish the prepared GitHub Release
+## Optional future GitHub Release
 
-Once `v1.0.0` is pushed and the CLI is authenticated as an account with access:
+The user does not want a GitHub Release now. If publication is requested later,
+`v1.0.0` is already pushed. After authenticating the CLI as an account with access:
 
 ```powershell
 gh release create v1.0.0 docs/PERFORMANCE_ANALYSIS.pdf --repo Shreyash2942/sortbench --verify-tag --title "SortBench v1.0.0" --notes-file docs/RELEASE_NOTES.md

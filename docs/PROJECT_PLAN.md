@@ -11,7 +11,7 @@ This file tracks implementation status rather than treating planned work as done
 | 4 | Implement timer, runner, validation, CSV export | Complete |
 | 5 | Execute and validate the complete performance matrix | Complete |
 | 6 | Analyze results, generate charts and recommendations, draft analysis | Complete |
-| 7 | Final tests, documentation, retrospective, release | Implementation/QA complete; GitHub Release publication pending authentication |
+| 7 | Final tests, documentation, retrospective, release | Complete for requested scope; GitHub Release deferred by user |
 
 ## Day 1 deliverables
 
@@ -141,11 +141,13 @@ is disclosed. See [ANALYSIS_WORKFLOW.md](ANALYSIS_WORKFLOW.md) and
 - [x] Complete the README, recommendation guide, and retrospective.
 - [x] Preserve the original assignment and all benchmark evidence.
 - [x] Prepare v1.0.0 release notes and an evidence-based release checklist.
-- [ ] Publish and verify the stable GitHub Release after CLI authentication.
+- [x] Push the completed project and annotated v1.0.0 tag to GitHub.
+- GitHub Release publication is deferred by user request and is not required now.
 
 See [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md) for verification evidence and
-publication status. The repository is ready for release; a GitHub Release page
-requires API authentication separately from the working SSH Git remote.
+publication status. All requested work is complete and pushed. The original
+plan remains unchanged; the user chose to defer its GitHub Release publication
+step and finish with the repository push.
 
 ## Day 1 decisions to carry forward
 

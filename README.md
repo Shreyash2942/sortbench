@@ -7,8 +7,9 @@ performance and scalability change with input size and ordering?**
 **Version:** v1.0.0. Implementation and Day 7 quality assurance are complete:
 **363 tests pass**, all **64 benchmark scenarios** are recorded, and the final
 charts, recommendations, [three-page report](docs/PERFORMANCE_ANALYSIS.pdf),
-and retrospective are included. GitHub Release publication status is tracked
-in the [release checklist](docs/RELEASE_CHECKLIST.md).
+and retrospective are included. All project work is pushed to GitHub. Creating
+a GitHub Release page is deferred by user request; see the
+[release checklist](docs/RELEASE_CHECKLIST.md).
 
 ## Setup and run
 
