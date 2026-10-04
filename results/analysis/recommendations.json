@@ -1,0 +1,178 @@
+[
+  {
+    "dataset_type": "random",
+    "size": 1000,
+    "algorithms": [
+      "Merge Sort"
+    ],
+    "execution_time_seconds": 0.0009684999822638929,
+    "tied": false,
+    "basis": "Exact scenario in the supplied audited single-trial dataset",
+    "limitation": "One trial on one machine; this observed minimum is not a statistically established advantage."
+  },
+  {
+    "dataset_type": "random",
+    "size": 5000,
+    "algorithms": [
+      "Merge Sort"
+    ],
+    "execution_time_seconds": 0.005577199975959957,
+    "tied": false,
+    "basis": "Exact scenario in the supplied audited single-trial dataset",
+    "limitation": "One trial on one machine; this observed minimum is not a statistically established advantage."
+  },
+  {
+    "dataset_type": "random",
+    "size": 10000,
+    "algorithms": [
+      "Merge Sort"
+    ],
+    "execution_time_seconds": 0.011803600005805492,
+    "tied": false,
+    "basis": "Exact scenario in the supplied audited single-trial dataset",
+    "limitation": "One trial on one machine; this observed minimum is not a statistically established advantage."
+  },
+  {
+    "dataset_type": "random",
+    "size": 50000,
+    "algorithms": [
+      "Merge Sort"
+    ],
+    "execution_time_seconds": 0.07313350000185892,
+    "tied": false,
+    "basis": "Exact scenario in the supplied audited single-trial dataset",
+    "limitation": "One trial on one machine; this observed minimum is not a statistically established advantage."
+  },
+  {
+    "dataset_type": "sorted",
+    "size": 1000,
+    "algorithms": [
+      "Bubble Sort"
+    ],
+    "execution_time_seconds": 2.600002335384488e-05,
+    "tied": false,
+    "basis": "Exact scenario in the supplied audited single-trial dataset",
+    "limitation": "One trial on one machine; this observed minimum is not a statistically established advantage. Bubble/Insertion ranking changed at 10,000 elements in the separate Day 5 diagnostic."
+  },
+  {
+    "dataset_type": "sorted",
+    "size": 5000,
+    "algorithms": [
+      "Bubble Sort"
+    ],
+    "execution_time_seconds": 0.0001238000113517046,
+    "tied": false,
+    "basis": "Exact scenario in the supplied audited single-trial dataset",
+    "limitation": "One trial on one machine; this observed minimum is not a statistically established advantage. Bubble/Insertion ranking changed at 10,000 elements in the separate Day 5 diagnostic."
+  },
+  {
+    "dataset_type": "sorted",
+    "size": 10000,
+    "algorithms": [
+      "Insertion Sort"
+    ],
+    "execution_time_seconds": 0.00046519999159500003,
+    "tied": false,
+    "basis": "Exact scenario in the supplied audited single-trial dataset",
+    "limitation": "One trial on one machine; this observed minimum is not a statistically established advantage. Bubble/Insertion ranking changed at 10,000 elements in the separate Day 5 diagnostic."
+  },
+  {
+    "dataset_type": "sorted",
+    "size": 50000,
+    "algorithms": [
+      "Bubble Sort"
+    ],
+    "execution_time_seconds": 0.0012729000300168991,
+    "tied": false,
+    "basis": "Exact scenario in the supplied audited single-trial dataset",
+    "limitation": "One trial on one machine; this observed minimum is not a statistically established advantage. Bubble/Insertion ranking changed at 10,000 elements in the separate Day 5 diagnostic."
+  },
+  {
+    "dataset_type": "reverse_sorted",
+    "size": 1000,
+    "algorithms": [
+      "Merge Sort"
+    ],
+    "execution_time_seconds": 0.0008307999814860523,
+    "tied": false,
+    "basis": "Exact scenario in the supplied audited single-trial dataset",
+    "limitation": "One trial on one machine; this observed minimum is not a statistically established advantage."
+  },
+  {
+    "dataset_type": "reverse_sorted",
+    "size": 5000,
+    "algorithms": [
+      "Merge Sort"
+    ],
+    "execution_time_seconds": 0.005028799991123378,
+    "tied": false,
+    "basis": "Exact scenario in the supplied audited single-trial dataset",
+    "limitation": "One trial on one machine; this observed minimum is not a statistically established advantage."
+  },
+  {
+    "dataset_type": "reverse_sorted",
+    "size": 10000,
+    "algorithms": [
+      "Merge Sort"
+    ],
+    "execution_time_seconds": 0.011158800043631345,
+    "tied": false,
+    "basis": "Exact scenario in the supplied audited single-trial dataset",
+    "limitation": "One trial on one machine; this observed minimum is not a statistically established advantage."
+  },
+  {
+    "dataset_type": "reverse_sorted",
+    "size": 50000,
+    "algorithms": [
+      "Merge Sort"
+    ],
+    "execution_time_seconds": 0.06314639997435734,
+    "tied": false,
+    "basis": "Exact scenario in the supplied audited single-trial dataset",
+    "limitation": "One trial on one machine; this observed minimum is not a statistically established advantage."
+  },
+  {
+    "dataset_type": "partially_sorted",
+    "size": 1000,
+    "algorithms": [
+      "Merge Sort"
+    ],
+    "execution_time_seconds": 0.0008885999559424818,
+    "tied": false,
+    "basis": "Exact scenario in the supplied audited single-trial dataset",
+    "limitation": "One trial on one machine; this observed minimum is not a statistically established advantage."
+  },
+  {
+    "dataset_type": "partially_sorted",
+    "size": 5000,
+    "algorithms": [
+      "Merge Sort"
+    ],
+    "execution_time_seconds": 0.011702299991156906,
+    "tied": false,
+    "basis": "Exact scenario in the supplied audited single-trial dataset",
+    "limitation": "One trial on one machine; this observed minimum is not a statistically established advantage."
+  },
+  {
+    "dataset_type": "partially_sorted",
+    "size": 10000,
+    "algorithms": [
+      "Merge Sort"
+    ],
+    "execution_time_seconds": 0.011374000052455813,
+    "tied": false,
+    "basis": "Exact scenario in the supplied audited single-trial dataset",
+    "limitation": "One trial on one machine; this observed minimum is not a statistically established advantage."
+  },
+  {
+    "dataset_type": "partially_sorted",
+    "size": 50000,
+    "algorithms": [
+      "Merge Sort"
+    ],
+    "execution_time_seconds": 0.0819029999547638,
+    "tied": false,
+    "basis": "Exact scenario in the supplied audited single-trial dataset",
+    "limitation": "One trial on one machine; this observed minimum is not a statistically established advantage."
+  }
+]

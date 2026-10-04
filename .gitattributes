@@ -5,3 +5,6 @@ results/diagnostic_5000_10000.* -text
 results/scenario_winners.csv -text
 results/run_review.json -text
 results/validation_report.json -text
+
+# Preserve exact bytes for Day 6 derived-artifact provenance hashes.
+results/analysis/** -text

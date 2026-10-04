@@ -1,0 +1,23 @@
+{
+  "source_files": {
+    "benchmark_results.csv": "35a3ee57bb7b1b9c7f433e3d91a3def5df9f5a03d0a3c70b4829369802419484",
+    "benchmark_results.metadata.json": "f121043784d057f8306cc34885d2df58ca31be4bf2271e7184998e54ac38dce7"
+  },
+  "row_count": 64,
+  "trial_count_per_scenario": 1,
+  "method": "Exact recorded times; no averaging, interpolation, or statistical inference",
+  "pandas_version": "3.0.6",
+  "matplotlib_version": "3.11.2",
+  "generated_files": {
+    "charts/dataset_comparison.png": "fd23a670d878294d215cfddc40a65aa0e183038e7dddb70734516eec2a944437",
+    "charts/partially_sorted.png": "391f79b91d582cf242ee2c5683ba89b419fdeca84c1497c1692daae7a6393205",
+    "charts/random.png": "7e0e7702eaa27f713a04c694dc46bea7d6b1634d09312b9634afb918bf320554",
+    "charts/reverse_sorted.png": "9cfd9d3873e9a4976b1adba16694ea8757086534d34982777130058de67ea06e",
+    "charts/sorted.png": "fcba0276d1992964223deb6c1f993c23ce7a5eba7f22f6aca1b02e972f18242f",
+    "charts/time_vs_size.png": "8d14e3c0957c260ea1a6fa8f7d8a2c25c49a077d4ca6d6007b3b876cc291850f",
+    "comparison.csv": "c6b18f8fd400c61440ac9619e0c73bb79c16096fb3342c07c5f69c3553331457",
+    "growth.csv": "53a67991bb6336011481e8423be7334b3c0f0f0162ea8bc284c1c2ef283ed27c",
+    "observed_winners.csv": "7b09ad33bf524ca732764bc11fdeb458e42f381abb4654dec76639cb60e239b5",
+    "recommendations.json": "893f7b2c83211634646d585536a685ba1faff7be41af4c65cdc0c1b87e5d1d05"
+  }
+}

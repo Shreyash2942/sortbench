@@ -1,0 +1,17 @@
+dataset_type,size,algorithm,execution_time_seconds
+random,1000,Merge Sort,0.0009684999822638929
+sorted,1000,Bubble Sort,2.600002335384488e-05
+reverse_sorted,1000,Merge Sort,0.0008307999814860523
+partially_sorted,1000,Merge Sort,0.0008885999559424818
+random,5000,Merge Sort,0.005577199975959957
+sorted,5000,Bubble Sort,0.0001238000113517046
+reverse_sorted,5000,Merge Sort,0.005028799991123378
+partially_sorted,5000,Merge Sort,0.011702299991156906
+random,10000,Merge Sort,0.011803600005805492
+sorted,10000,Insertion Sort,0.00046519999159500003
+reverse_sorted,10000,Merge Sort,0.011158800043631345
+partially_sorted,10000,Merge Sort,0.011374000052455813
+random,50000,Merge Sort,0.07313350000185892
+sorted,50000,Bubble Sort,0.0012729000300168991
+reverse_sorted,50000,Merge Sort,0.06314639997435734
+partially_sorted,50000,Merge Sort,0.0819029999547638
