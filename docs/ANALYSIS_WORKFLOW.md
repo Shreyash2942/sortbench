@@ -61,6 +61,7 @@ prove sorting correctness. The runner checked correctness during execution.
 Saved [Day 5 winners](../results/scenario_winners.csv) remain unchanged;
 the Day 6 table derives winners again and supports tied minima.
 
-Read the [performance analysis draft](PERFORMANCE_ANALYSIS.md) and
-[recommendation guide](RECOMMENDATION_GUIDE.md) for interpretation. Day 7
-retains final editing, submission formatting, release checks and retrospective.
+Read the [performance analysis](PERFORMANCE_ANALYSIS.md) and
+[recommendation guide](RECOMMENDATION_GUIDE.md) for interpretation. The final [three-page PDF](PERFORMANCE_ANALYSIS.pdf)
+is reproduced with `python scripts/render_report.py`. See
+[RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md) for release verification.

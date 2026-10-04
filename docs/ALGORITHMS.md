@@ -50,5 +50,6 @@ for sort in (bubble_sort, selection_sort, insertion_sort, merge_sort):
 
 Run `python main.py` for the demonstration and `python -m pytest -q` for the
 test suite in the configured environment. Day 2 has 93 passing tests; see
-[TEST_PLAN.md](TEST_PLAN.md) for coverage. The expensive 64-scenario performance
-experiment remains scheduled for Days 4–5.
+[TEST_PLAN.md](TEST_PLAN.md) for coverage. The complete 64-scenario performance
+experiment is recorded in `results/benchmark_results.csv`; the final
+interpretation is in [PERFORMANCE_ANALYSIS.md](PERFORMANCE_ANALYSIS.md).

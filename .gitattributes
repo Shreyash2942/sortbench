@@ -8,3 +8,7 @@ results/validation_report.json -text
 
 # Preserve exact bytes for Day 6 derived-artifact provenance hashes.
 results/analysis/** -text
+
+# Preserve exact bytes used by the release verification record.
+requirements-lock.txt -text
+results/release_validation.json -text

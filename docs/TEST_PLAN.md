@@ -6,7 +6,9 @@ Day 3 adds **175 dataset and integration tests** in `tests/test_data_generator.p
 Day 4 adds **33 timer and benchmark tests** in `tests/test_benchmark.py`.
 Day 5 adds **37 persisted-result audit tests** in `tests/test_result_validation.py`.
 Day 6 adds **20 analysis, recommendation, and chart tests** in `tests/test_analysis.py`.
-The complete suite has **358 passing tests** with Python 3.14.4.
+Day 7 expands collision protection to all generated filenames, adding five
+regression cases (25 total analysis tests).
+The complete suite has **363 passing tests** with Python 3.14.4.
 
 The suite checks each algorithm against Python's `sorted()` and verifies that
 the returned object is the supplied list. It covers 13 named edge cases, every
@@ -65,3 +67,8 @@ Run implemented tests from the repository root with `python -m pytest`. Keep
 the expensive 50,000-element timing experiments separate from ordinary unit
 tests. Compare values against the built-in sorting oracle; never assert that a
 specific algorithm must finish within a fixed wall-clock threshold.
+
+Day 7 verified the full suite in a fresh environment installed from
+`requirements-lock.txt`; `pip check` and the demonstration also passed.
+The three-page PDF, raw-result integrity, generated-file hashes, and local
+document links were checked separately. See [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md).

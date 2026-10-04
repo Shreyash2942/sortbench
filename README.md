@@ -4,10 +4,11 @@ A Python assignment comparing Bubble, Selection, Insertion, and Merge Sort
 across four dataset orderings and four sizes. The question is: **how do sorting
 performance and scalability change with input size and ordering?**
 
-**Status:** Days 1-6 complete. All **64 required benchmark scenarios** are
-recorded and independently audited, and **358 tests pass**. Six charts,
-comparison tables, measured recommendations, and the performance analysis
-draft are available. Day 7 covers final review, formatting, and release.
+**Version:** v1.0.0. Implementation and Day 7 quality assurance are complete:
+**363 tests pass**, all **64 benchmark scenarios** are recorded, and the final
+charts, recommendations, [three-page report](docs/PERFORMANCE_ANALYSIS.pdf),
+and retrospective are included. GitHub Release publication status is tracked
+in the [release checklist](docs/RELEASE_CHECKLIST.md).
 
 ## Setup and run
 
@@ -15,12 +16,15 @@ From this repository directory in Windows PowerShell:
 
 ```powershell
 python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe -m pip install -r requirements-lock.txt
 .\.venv\Scripts\python.exe main.py
 ```
 
 Calling the virtual environment's interpreter directly avoids requiring a
 PowerShell activation script. On macOS/Linux use `.venv/bin/python` instead.
+The lock file captures the verified Windows/Python 3.14.4 environment;
+`requirements.txt` lists direct dependencies for a flexible installation. Other
+Python versions and platforms have not been verified.
 The sorting demonstration and Day 1 runtime spike use only the standard library and can
 also be run directly with `python main.py` and `python scripts/runtime_spike.py`.
 
@@ -100,7 +104,7 @@ Merge Sort had the lowest recorded time in all 12 random, reverse-sorted,
 and partially sorted groups. Bubble won three sorted groups and Insertion
 one; the separate diagnostic changed their ranking at 10,000 elements.
 These are single-trial observations, not statistically established advantages.
-See the [analysis draft](docs/PERFORMANCE_ANALYSIS.md),
+See the [performance analysis](docs/PERFORMANCE_ANALYSIS.md),
 [recommendation guide](docs/RECOMMENDATION_GUIDE.md), and
 [ordering comparison chart](results/analysis/charts/dataset_comparison.png).
 
@@ -136,7 +140,10 @@ docs/                   Requirements, plans, methodology, and reports
 ## Project documents
 
 - [Original assignment plan](docs/ASSIGNMENT_PLAN.md)
-- [Progress and next steps](docs/PROJECT_PLAN.md)
+- [Implementation checklist](docs/PROJECT_PLAN.md)
+- [Release checklist and verification](docs/RELEASE_CHECKLIST.md)
+- [Release notes](docs/RELEASE_NOTES.md)
+- [Final three-page PDF](docs/PERFORMANCE_ANALYSIS.pdf)
 - [Requirements](docs/REQUIREMENTS.md)
 - [Architecture and benchmark workflow](docs/ARCHITECTURE.md)
 - [Benchmark methodology](docs/BENCHMARK_METHODOLOGY.md)
@@ -147,9 +154,11 @@ docs/                   Requirements, plans, methodology, and reports
 - [Algorithm implementations and complexity](docs/ALGORITHMS.md)
 - [Dataset generation and reproducibility](docs/DATA_GENERATION.md)
 - [Day 1 runtime spike](docs/RUNTIME_SPIKE.md)
-- [Performance analysis draft](docs/PERFORMANCE_ANALYSIS.md)
+- [Performance analysis](docs/PERFORMANCE_ANALYSIS.md)
 - [Measured recommendation guide](docs/RECOMMENDATION_GUIDE.md)
-- [Retrospective — pending](docs/RETROSPECTIVE.md)
+- [Retrospective](docs/RETROSPECTIVE.md)
 
-The target release is `v1.0.0` after seven development days. The original
-assignment includes the release checklist and future portfolio enhancements.
+Version `v1.0.0` contains the seven-day implementation. The original assignment
+is preserved unchanged; actual completion evidence is in the release checklist.
+Dashboards, additional algorithms, CI, and repeated-trial statistics remain
+future portfolio enhancements.

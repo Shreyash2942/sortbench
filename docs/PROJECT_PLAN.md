@@ -11,7 +11,7 @@ This file tracks implementation status rather than treating planned work as done
 | 4 | Implement timer, runner, validation, CSV export | Complete |
 | 5 | Execute and validate the complete performance matrix | Complete |
 | 6 | Analyze results, generate charts and recommendations, draft analysis | Complete |
-| 7 | Final tests, documentation, retrospective, release | Pending |
+| 7 | Final tests, documentation, retrospective, release | Implementation/QA complete; GitHub Release publication pending authentication |
 
 ## Day 1 deliverables
 
@@ -131,11 +131,21 @@ statistical uncertainty estimates. The separate diagnostic ranking change
 is disclosed. See [ANALYSIS_WORKFLOW.md](ANALYSIS_WORKFLOW.md) and
 [PERFORMANCE_ANALYSIS.md](PERFORMANCE_ANALYSIS.md).
 
-## Day 7 starting point
+## Day 7 deliverables
 
-Perform final regression and deliverable review, finalize the analysis's
-2-3 page submission formatting and documentation, write the retrospective,
-and prepare the planned v1.0.0 release. Day 6 does not mark release work complete.
+- [x] Review source code, docstrings, deliverables and incremental Git history.
+- [x] Extend analysis input protection to all generated filenames.
+- [x] Pass all 363 tests in a fresh environment installed from the lock file.
+- [x] Verify dependency consistency, the demo, result hashes, and document links.
+- [x] Finalize the analysis as a three-page PDF with editable Markdown source.
+- [x] Complete the README, recommendation guide, and retrospective.
+- [x] Preserve the original assignment and all benchmark evidence.
+- [x] Prepare v1.0.0 release notes and an evidence-based release checklist.
+- [ ] Publish and verify the stable GitHub Release after CLI authentication.
+
+See [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md) for verification evidence and
+publication status. The repository is ready for release; a GitHub Release page
+requires API authentication separately from the working SSH Git remote.
 
 ## Day 1 decisions to carry forward
 

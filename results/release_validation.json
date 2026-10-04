@@ -1,0 +1,22 @@
+{
+  "version": "v1.0.0",
+  "verified_at_utc": "2026-10-04T02:00:39.296425+00:00",
+  "python_version": "3.14.4",
+  "platform": "Windows 11",
+  "fresh_environment_install": "requirements-lock.txt",
+  "test_command": "python -m pytest -q",
+  "tests_passed": 363,
+  "pip_check": "No broken requirements found",
+  "pdf_pages": 3,
+  "pdf_layout_review": "All three pages visually inspected",
+  "original_assignment_unchanged": true,
+  "local_document_links": "passed",
+  "benchmark_rerun_for_release": false,
+  "primary_and_derived_hashes": "matched Day 5 and Day 6 manifests",
+  "sha256": {
+    "docs/PERFORMANCE_ANALYSIS.pdf": "48a44018af25b9d9e3a84f861299dbb311e36fb79b8f5fd282f2b9cc8aef5b7f",
+    "requirements-lock.txt": "27dfcf66d8801bf644292175a89223be4a4efaaa562a8577a0354616a65ce458",
+    "results/benchmark_results.csv": "35a3ee57bb7b1b9c7f433e3d91a3def5df9f5a03d0a3c70b4829369802419484",
+    "results/benchmark_results.metadata.json": "f121043784d057f8306cc34885d2df58ca31be4bf2271e7184998e54ac38dce7"
+  }
+}
