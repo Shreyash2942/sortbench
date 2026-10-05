@@ -13,8 +13,9 @@ htmlcov/
 .DS_Store
 Thumbs.db
 
-# Local graph extraction caches
+# Local Graphify outputs and extraction caches
 .graphify_cache/
+graphify-out/
 graphify-out/cache/
 
 # Keep measured results, charts, and documentation under version control.
