@@ -145,6 +145,7 @@ docs/                   Requirements, plans, methodology, and reports
 - [Release checklist and verification](docs/RELEASE_CHECKLIST.md)
 - [Release notes](docs/RELEASE_NOTES.md)
 - [Final three-page PDF](docs/PERFORMANCE_ANALYSIS.pdf)
+- [APA-style project report](docs/APA_PROJECT_REPORT.pdf)
 - [Requirements](docs/REQUIREMENTS.md)
 - [Architecture and benchmark workflow](docs/ARCHITECTURE.md)
 - [Benchmark methodology](docs/BENCHMARK_METHODOLOGY.md)
