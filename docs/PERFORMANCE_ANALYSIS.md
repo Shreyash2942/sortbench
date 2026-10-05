@@ -1,8 +1,9 @@
 # SortBench performance analysis
 
-Final analysis for SortBench v1.0.0. A formatted three-page version is available
-in [PERFORMANCE_ANALYSIS.pdf](PERFORMANCE_ANALYSIS.pdf). All times below come
-from the [primary CSV](../results/benchmark_results.csv), unless labeled diagnostic.
+Final analysis for SortBench v1.0.0. The submission-ready Word report is
+available in [SortBench_Final_Project_Report.docx](SortBench_Final_Project_Report.docx).
+All times below come from the [primary CSV](../results/benchmark_results.csv),
+unless labeled diagnostic.
 
 ## Experiment and evidence
 

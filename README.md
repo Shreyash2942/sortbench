@@ -6,10 +6,9 @@ performance and scalability change with input size and ordering?**
 
 **Version:** v1.0.0. Implementation and Day 7 quality assurance are complete:
 **363 tests pass**, all **64 benchmark scenarios** are recorded, and the final
-charts, recommendations, [three-page report](docs/PERFORMANCE_ANALYSIS.pdf),
-and [APA-style report](docs/APA_PROJECT_REPORT.pdf) are included. All project
-work is pushed to GitHub. Creating a GitHub Release page is deferred by user
-request.
+charts, recommendations, [Word report](docs/SortBench_Final_Project_Report.docx),
+and Markdown reports are included. All project work is pushed to GitHub.
+Creating a GitHub Release page is deferred by user request.
 
 ## Setup and run
 
@@ -136,8 +135,9 @@ docs/                   Final reports, figures, and recommendation guide
 ## Project documents
 
 - [Documentation index](docs/README.md)
-- [Final three-page PDF](docs/PERFORMANCE_ANALYSIS.pdf)
-- [APA-style project report](docs/APA_PROJECT_REPORT.pdf)
+- [Project guide](docs/PROJECT_GUIDE.md)
+- [Final Word report](docs/SortBench_Final_Project_Report.docx)
+- [APA-style project report source](docs/APA_PROJECT_REPORT.md)
 - [Performance analysis](docs/PERFORMANCE_ANALYSIS.md)
 - [Measured recommendation guide](docs/RECOMMENDATION_GUIDE.md)
 

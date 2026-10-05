@@ -7,9 +7,9 @@ self-contained inside `docs/`.
 
 ## Final reports
 
-- [APA-style project report](APA_PROJECT_REPORT.pdf)
+- [Project guide](PROJECT_GUIDE.md)
+- [Final Word report](SortBench_Final_Project_Report.docx)
 - [APA-style project report source](APA_PROJECT_REPORT.md)
-- [Three-page performance analysis](PERFORMANCE_ANALYSIS.pdf)
 - [Performance analysis source](PERFORMANCE_ANALYSIS.md)
 - [Recommendation guide](RECOMMENDATION_GUIDE.md)
 
