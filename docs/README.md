@@ -1,9 +1,9 @@
 # SortBench Documentation
 
-This folder contains the finished SortBench project documentation, reports, and
-submission-ready figures. The original measured CSVs and derived analysis data
-remain in `../results/`; the chart images are also copied into
-[`figures/`](figures/) so the reports are self-contained inside `docs/`.
+This folder contains the final SortBench report package and submission-ready
+figures. The measured CSVs and derived analysis data remain in `../results/`;
+the chart images are also copied into [`figures/`](figures/) so the reports are
+self-contained inside `docs/`.
 
 ## Final reports
 
@@ -12,7 +12,6 @@ remain in `../results/`; the chart images are also copied into
 - [Three-page performance analysis](PERFORMANCE_ANALYSIS.pdf)
 - [Performance analysis source](PERFORMANCE_ANALYSIS.md)
 - [Recommendation guide](RECOMMENDATION_GUIDE.md)
-- [Retrospective](RETROSPECTIVE.md)
 
 ## Analysis figures
 
@@ -23,23 +22,11 @@ remain in `../results/`; the chart images are also copied into
 - [Reverse-sorted dataset chart](figures/reverse_sorted.png)
 - [Partially sorted dataset chart](figures/partially_sorted.png)
 
-## Project evidence
+## Supporting data
 
-- [Release checklist and verification](RELEASE_CHECKLIST.md)
-- [Release notes](RELEASE_NOTES.md)
-- [Project plan](PROJECT_PLAN.md)
-- [Original assignment plan](ASSIGNMENT_PLAN.md)
-- [Requirements](REQUIREMENTS.md)
-- [Test plan](TEST_PLAN.md)
-- [Result validation](RESULT_VALIDATION.md)
-- [Day 5 observations](DAY5_OBSERVATIONS.md)
-
-## Technical documentation
-
-- [Architecture](ARCHITECTURE.md)
-- [Benchmark methodology](BENCHMARK_METHODOLOGY.md)
-- [Benchmark runner](BENCHMARK_RUNNER.md)
-- [Analysis workflow](ANALYSIS_WORKFLOW.md)
-- [Algorithms](ALGORITHMS.md)
-- [Data generation](DATA_GENERATION.md)
-- [Day 1 runtime spike](RUNTIME_SPIKE.md)
+- [Primary benchmark CSV](../results/benchmark_results.csv)
+- [Benchmark metadata](../results/benchmark_results.metadata.json)
+- [Result validation report](../results/validation_report.json)
+- [Derived comparison table](../results/analysis/comparison.csv)
+- [Observed winners table](../results/analysis/observed_winners.csv)
+- [Machine-readable recommendations](../results/analysis/recommendations.json)

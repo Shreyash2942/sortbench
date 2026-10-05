@@ -7,9 +7,9 @@ performance and scalability change with input size and ordering?**
 **Version:** v1.0.0. Implementation and Day 7 quality assurance are complete:
 **363 tests pass**, all **64 benchmark scenarios** are recorded, and the final
 charts, recommendations, [three-page report](docs/PERFORMANCE_ANALYSIS.pdf),
-and retrospective are included. All project work is pushed to GitHub. Creating
-a GitHub Release page is deferred by user request; see the
-[release checklist](docs/RELEASE_CHECKLIST.md).
+and [APA-style report](docs/APA_PROJECT_REPORT.pdf) are included. All project
+work is pushed to GitHub. Creating a GitHub Release page is deferred by user
+request.
 
 ## Setup and run
 
@@ -51,8 +51,7 @@ assert result is values
 assert values == [1, 3, 4, 6, 8]
 ```
 
-Every algorithm modifies and returns the supplied list. See the
-[algorithm guide](docs/ALGORITHMS.md) for behavior and complexity.
+Every algorithm modifies and returns the supplied list.
 
 Generate reproducible datasets:
 
@@ -65,8 +64,7 @@ partial_values = generate_partially_sorted(1000)
 assert sorted(random_values) == sorted(partial_values)
 ```
 
-All generators accept a keyword `seed` override and return fresh lists. See the
-[dataset guide](docs/DATA_GENERATION.md) for ordering, seed, and validation rules.
+All generators accept a keyword `seed` override and return fresh lists.
 
 Run a small benchmark from the repository root:
 
@@ -76,17 +74,14 @@ Run a small benchmark from the repository root:
 
 This writes 32 validated rows and `results/my_smoke.metadata.json`. Each run
 requires a new output filename. Existing results are never overwritten.
-See [the runner guide](docs/BENCHMARK_RUNNER.md) for the full Day 5 command,
-output fields, and handling incomplete runs. The committed
-[Day 4 smoke results](results/day4_smoke.csv) verify the pipeline and are not
-the final experiment dataset.
+The committed [Day 4 smoke results](results/day4_smoke.csv) verify the
+pipeline and are not the final experiment dataset.
 
 The full [benchmark CSV](results/benchmark_results.csv),
 [metadata](results/benchmark_results.metadata.json), and
-[audit report](results/validation_report.json) are available. Read the
-[Day 5 observations](docs/DAY5_OBSERVATIONS.md) for timings, observed winners,
-and limitations. The primary dataset uses one trial per scenario; no averages
-across attempts or selectively chosen fastest measurements are reported.
+[audit report](results/validation_report.json) are available. The primary
+dataset uses one trial per scenario; no averages across attempts or
+selectively chosen fastest measurements are reported.
 
 ## Analysis and charts
 
@@ -96,8 +91,8 @@ Regenerate the derived outputs from the audited primary CSV:
 .\.venv\Scripts\python.exe -m analysis.performance_analyzer
 ```
 
-See the [analysis workflow](docs/ANALYSIS_WORKFLOW.md) for the API, artifacts,
-and provenance. This command does not rerun benchmarks or change measurements.
+This command regenerates derived analysis artifacts from the audited primary
+CSV. It does not rerun benchmarks or change measurements.
 
 ![Execution time versus dataset size](docs/figures/time_vs_size.png)
 
@@ -135,33 +130,17 @@ visualization/          Charts (Day 6)
 results/                Actual measured data and generated charts
 tests/                  Correctness and integration tests (Days 2 onward)
 scripts/runtime_spike.py Bounded Day 1 feasibility experiment
-docs/                   Requirements, plans, methodology, and reports
+docs/                   Final reports, figures, and recommendation guide
 ```
 
 ## Project documents
 
 - [Documentation index](docs/README.md)
-- [Original assignment plan](docs/ASSIGNMENT_PLAN.md)
-- [Implementation checklist](docs/PROJECT_PLAN.md)
-- [Release checklist and verification](docs/RELEASE_CHECKLIST.md)
-- [Release notes](docs/RELEASE_NOTES.md)
 - [Final three-page PDF](docs/PERFORMANCE_ANALYSIS.pdf)
 - [APA-style project report](docs/APA_PROJECT_REPORT.pdf)
-- [Requirements](docs/REQUIREMENTS.md)
-- [Architecture and benchmark workflow](docs/ARCHITECTURE.md)
-- [Benchmark methodology](docs/BENCHMARK_METHODOLOGY.md)
-- [Running benchmarks and interpreting metadata](docs/BENCHMARK_RUNNER.md)
-- [Result validation](docs/RESULT_VALIDATION.md)
-- [Day 5 measured observations](docs/DAY5_OBSERVATIONS.md)
-- [Test plan](docs/TEST_PLAN.md)
-- [Algorithm implementations and complexity](docs/ALGORITHMS.md)
-- [Dataset generation and reproducibility](docs/DATA_GENERATION.md)
-- [Day 1 runtime spike](docs/RUNTIME_SPIKE.md)
 - [Performance analysis](docs/PERFORMANCE_ANALYSIS.md)
 - [Measured recommendation guide](docs/RECOMMENDATION_GUIDE.md)
-- [Retrospective](docs/RETROSPECTIVE.md)
 
-Version `v1.0.0` contains the seven-day implementation. The original assignment
-is preserved unchanged; actual completion evidence is in the release checklist.
-Dashboards, additional algorithms, CI, and repeated-trial statistics remain
-future portfolio enhancements.
+Version `v1.0.0` contains the completed seven-day implementation. Dashboards,
+additional algorithms, CI, and repeated-trial statistics remain future
+portfolio enhancements.
