@@ -43,32 +43,32 @@ Table 1 summarizes the 50,000-element observations, where the performance spread
 | Reverse-sorted | 79.5163 | 28.0274 | 52.9517 | 0.0631 |
 | Partially sorted | 40.8929 | 26.2688 | 3.2475 | 0.0819 |
 
-![Figure 1. Execution time by dataset size.](../results/analysis/charts/time_vs_size.png)
+![Figure 1. Execution time by dataset size.](figures/time_vs_size.png)
 
 **Figure 1**  
 *Execution time by dataset size.* The logarithmic time scale makes the gap between Merge Sort and the quadratic algorithms visible across all tested sizes.
 
-![Figure 2. Algorithm comparison by dataset ordering.](../results/analysis/charts/dataset_comparison.png)
+![Figure 2. Algorithm comparison by dataset ordering.](figures/dataset_comparison.png)
 
 **Figure 2**  
 *Algorithm comparison by dataset ordering.* Ordering strongly affected the adaptive algorithms, especially on sorted input.
 
-![Figure 3. Random dataset performance.](../results/analysis/charts/random.png)
+![Figure 3. Random dataset performance.](figures/random.png)
 
 **Figure 3**  
 *Random dataset performance.* Merge Sort scaled far better than the quadratic algorithms as random input size increased.
 
-![Figure 4. Sorted dataset performance.](../results/analysis/charts/sorted.png)
+![Figure 4. Sorted dataset performance.](figures/sorted.png)
 
 **Figure 4**  
 *Sorted dataset performance.* Bubble Sort and Insertion Sort benefited from already ordered data, while Selection Sort still performed quadratic scans.
 
-![Figure 5. Reverse-sorted dataset performance.](../results/analysis/charts/reverse_sorted.png)
+![Figure 5. Reverse-sorted dataset performance.](figures/reverse_sorted.png)
 
 **Figure 5**  
 *Reverse-sorted dataset performance.* Reverse order exposed the expensive worst-case behavior of Bubble Sort and Insertion Sort.
 
-![Figure 6. Partially sorted dataset performance.](../results/analysis/charts/partially_sorted.png)
+![Figure 6. Partially sorted dataset performance.](figures/partially_sorted.png)
 
 **Figure 6**  
 *Partially sorted dataset performance.* Insertion Sort improved compared with random and reverse-sorted input, but Merge Sort remained fastest in the tested cases.
@@ -106,4 +106,3 @@ Knuth, D. E. (1998). *The art of computer programming: Volume 3: Sorting and sea
 Python Software Foundation. (2026a). *time - Time access and conversions*. Python 3.14 documentation. https://docs.python.org/3/library/time.html
 
 Python Software Foundation. (2026b). *Sorting techniques*. Python 3.14 documentation. https://docs.python.org/3/howto/sorting.html
-

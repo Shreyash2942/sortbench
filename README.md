@@ -99,7 +99,7 @@ Regenerate the derived outputs from the audited primary CSV:
 See the [analysis workflow](docs/ANALYSIS_WORKFLOW.md) for the API, artifacts,
 and provenance. This command does not rerun benchmarks or change measurements.
 
-![Execution time versus dataset size](results/analysis/charts/time_vs_size.png)
+![Execution time versus dataset size](docs/figures/time_vs_size.png)
 
 Merge Sort had the lowest recorded time in all 12 random, reverse-sorted,
 and partially sorted groups. Bubble won three sorted groups and Insertion
@@ -107,7 +107,7 @@ one; the separate diagnostic changed their ranking at 10,000 elements.
 These are single-trial observations, not statistically established advantages.
 See the [performance analysis](docs/PERFORMANCE_ANALYSIS.md),
 [recommendation guide](docs/RECOMMENDATION_GUIDE.md), and
-[ordering comparison chart](results/analysis/charts/dataset_comparison.png).
+[ordering comparison chart](docs/figures/dataset_comparison.png).
 
 ## Required experiment
 
@@ -140,6 +140,7 @@ docs/                   Requirements, plans, methodology, and reports
 
 ## Project documents
 
+- [Documentation index](docs/README.md)
 - [Original assignment plan](docs/ASSIGNMENT_PLAN.md)
 - [Implementation checklist](docs/PROJECT_PLAN.md)
 - [Release checklist and verification](docs/RELEASE_CHECKLIST.md)

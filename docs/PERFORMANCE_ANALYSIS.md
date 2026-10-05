@@ -63,8 +63,8 @@ requirements. Memory usage was not profiled.
 
 The table summarizes 50,000-element results in seconds. The
 [complete comparison](../results/analysis/comparison.csv) covers all sizes;
-the [size chart](../results/analysis/charts/time_vs_size.png) and
-[ordering chart](../results/analysis/charts/dataset_comparison.png) visualize
+the [size chart](figures/time_vs_size.png) and
+[ordering chart](figures/dataset_comparison.png) visualize
 the same 64 measurements. Logarithmic axes accommodate the wide timing range;
 each plotted point is an actual observation, not an estimated runtime.
 

@@ -14,7 +14,7 @@ code push. The existing annotated `v1.0.0` Git tag is also pushed.
 | Sorting-only timer, independent copies, correctness validation | `benchmark/`, 33 runner/timer tests | Complete |
 | All 64 required measurements and CSV table | [Primary CSV](../results/benchmark_results.csv), complete metadata | Complete |
 | Independent persisted-result audit | 37 audit tests, [validation report](../results/validation_report.json) | Complete |
-| Performance, size, and ordering comparisons | [Six charts](../results/analysis/charts/time_vs_size.png), comparison and growth CSVs | Complete |
+| Performance, size, and ordering comparisons | [Six charts](figures/time_vs_size.png), comparison and growth CSVs | Complete |
 | Measured recommendation logic and guide | [Guide](RECOMMENDATION_GUIDE.md), 25 analysis/chart tests | Complete |
 | 2-3 page written analysis with complexity and trade-offs | [Three-page PDF](PERFORMANCE_ANALYSIS.pdf), [Markdown source](PERFORMANCE_ANALYSIS.md) | Complete |
 | README, requirements, architecture and test plan | Linked from [README](../README.md) | Complete |
